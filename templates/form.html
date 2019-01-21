@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>3324 Scouting</title>
+      <style>
+        form {
+          width: 420px;
+        }
+        div {
+          margin-bottom: 20px;
+        }
+        label {
+          display: inline-block;
+          width: 240px;
+          text-align: right;
+          padding-right: 10px;
+        }
+        button, input {
+          float: right;
+        }
+      </style>
+    </head>
+    <body>
+      <form method="post" action="{{ url_for('submitted_match') }}">
+        <div>
+          <label for="team_number">Team Number</label>
+          <input type = "number" name="team" id="team_number" value="3324">
+        </div>
+        <div>
+          <label for="sandstorm_rocket_points">How many points did this team score in the rocket during sandstorm?</label>
+          <input type = "number" name="sandstorm_rocket_points" id="sandstorm_rocket_points" value="0">
+        </div>
+          <div>
+          <label for="sandstorm_cargoship_points">How many points did this team score in the cargoship during sandstorm?</label>
+          <input type = "number" name="sandstorm_cargoship_points" id="sandstorm_cargoship_points" value="0">
+        </div>
+        <div>
+          <label for="starting_level">What level did this team start at</label>
+          <input type = "number" name="starting_level" id="starting_level" value="1">
+        </div>
+        <div>
+          <label for="teleop_rocket_points">How many points did this team score in the rocket during teleop?</label>
+          <input type = "number" name="teleop_rocket_points" id="teleop_rocket_points" value="0">
+        </div>
+        <div>
+          <label for="teleop_cargoship_points">How many points did this team score in the cargoship during teleop?</label>
+          <input type = "number" name="teleop_cargoship_points" id="teleop_cargoship_points" value="0">
+        </div>
+        <div>
+          <label for="climb">What level did this team end at/climb to?</label>
+          <input type = "number" name="climb" id="climb" value="0">
+        </div>
+        <div>
+          <label for="other">Other Notes (Buddy climb, etc)</label>
+          <input type = "text" name="other" id="other" value="None">
+        </div>
+        <div>
+          <button>Submit</button>
+        </div>
+      </form>
+    </body>
+</html>
