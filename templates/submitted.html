@@ -2,14 +2,16 @@
     <html>
     <head>
       <meta charset="utf-8">
-      <title>Forum Submitted!</title>
+      <title>Form Submitted</title>
+      <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'submitted.css')}}">
     </head>
     <body>
       <p>
-          Form submitted!
-           <a href="match_scouting">Return to match scouting</a>
-           <a href="pit_scouting">Return to pit scouting</a>
-           <a href="download_data">Download match scouting data as csv</a>
+          <h2>Form Submitted</h2> <br>
+           <a href="match_scouting">Return to Match Scouting</a> <br> <br>
+           <a href="pit_scouting">Return to Pit Scouting</a> <br> <br>
+           <a href="download_data">Download Match Scouting Data as CSV</a>
       </p>
     </body>
 </html>

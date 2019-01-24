@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pit Scouting Form</title>
+		<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+		<link rel="stylesheet" href="{{ url_for('static',filename = 'pit_scouting.css')}}">
+	</head>
+	<body>
+		<form method="POST" action="{{ url_for('submitted_pit') }}">
+			<div>
+				<label for="uses_Github">Does your team use GitHub?</label>
+				<p>Yes <input type="radio" name="uses_Github" id="uses_Github_Yes" value="1"></p> 
+				<p>No <input type="radio" name="uses_Github" id="uses_Github_No" value="0"></p>
+			</div>
+        <div>
+          <button>Submit</button>
+        </div>
+		</form>
+	</body>
+</html>

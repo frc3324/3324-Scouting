@@ -3,6 +3,8 @@ import database
 
 app = Flask(__name__)
 database.create_table()
+database.create_pit_table();
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
@@ -10,6 +12,15 @@ def index():
 @app.route('/match_scouting', methods=['GET', 'POST'])
 def match_scouting():
     return render_template('form.html')
+
+@app.route('/pit_scouting', methods=['GET', 'POST'])
+def pit_scouting():
+	return render_template('pit_scouting.html')
+
+@app.route('/submitted_pit', methods=['GET', 'POST'])
+def submitted_pit():
+	database.submit_pit_table(uses_Github=request.form['uses_Github'])
+	return render_template('submitted.html')
 
 @app.route('/submitted_match', methods=['GET', 'POST'])
 def submitted_match():
