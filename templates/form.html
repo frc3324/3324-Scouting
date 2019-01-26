@@ -6,8 +6,15 @@
       <title>3324 Scouting Form</title>
       <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
     </head>
     <body>
+      <div id="topBar">
+        <h2>Match Scouting Form</h2>
+      </div>
+      <a href="/"><button id="backButton">< Back to Home</button></a>
+
+
       <form method="POST" action="{{ url_for('submitted_match') }}">
         <div>
           <label for="team_number">Team Number</label>

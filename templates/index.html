@@ -5,12 +5,22 @@
       <title>3324 Metrobots Scouting Hub</title>
       <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'index.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
     </head>
     <body>
       <p>
-           <h2>Form Links</h2>
+           <div id="topBar">
+            <h2>Scouting Form Links</h2>
+           </div>
+
            <a href="match_scouting">Match Scouting</a> <br> <br>
-           <a href="pit_scouting">Pit Scouting Form</a> <br> <br>
+           <hr>
+           <h4>Pit Scouting Forms</h4>
+           <a href="mechanical_scouting">Mechanical Pit Forms</a> <br> <br>
+           <a href="electrical_scouting">Electrical Pit Forms</a> <br> <br>
+           <a href="programming_scouting">Programming Pit Forms</a> <br> <br>
+           <hr>
+           <h4>CSV Exports</h4>
            <a href="download_data">Download Match Scouting Data as CSV</a> <br> <br>
       </p>
     </body>

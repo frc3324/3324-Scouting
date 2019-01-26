@@ -15,20 +15,53 @@ def submit(team_number, sandstorm_rocket_points, sandstorm_cargoship_points, sta
     cursor.execute("INSERT INTO scouting VALUES (?,?,?,?,?,?,?,?)", scouting_info)
     conn.commit()
 
-def create_pit_table():
+def create_mechanical_table():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    try: 
-        cursor.execute('''CREATE TABLE pit_scouting (uses_Github int)''')
+    try:
+        cursor.execute('''CREATE TABLE mechanical (notes text) ''')
     except Exception as e: print(e)
 
-
-def submit_pit_table(uses_Github):
+def submit_mechanical(notes):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    scouting_info = (int(uses_Github))
-    cursor.execute("INSERT INTO pit_scouting VALUES (?)", (scouting_info,))
+    mechanical_info = (notes);
+    cursor.execute("INSERT INTO mechanical VALUES (?)", (mechanical_info,))
     conn.commit()
+
+
+
+
+def create_electrical_table():
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    try:
+        cursor.execute('''CREATE TABLE electrical (goodWires int) ''')
+    except Exception as e: print(e)
+
+def submit_electrical(goodWires):
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    electrical_info = (int(goodWires));
+    cursor.execute("INSERT INTO electrical VALUES (?)", (goodWires,))
+    conn.commit()
+
+
+def create_programming_table():
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    try:
+        cursor.execute('''CREATE TABLE programming (usesGithub int) ''')
+    except Exception as e: print(e)
+
+def submit_programming(usesGithub):
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    programming_info = (int(usesGithub));
+    cursor.execute("INSERT INTO programming VALUES (?)", (usesGithub,))
+    conn.commit()
+
+
 
 def create_csv():
     conn = sqlite3.connect('scouting.db')

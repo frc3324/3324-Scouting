@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Electrical Scouting Form</title>
+      	<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+      	<link rel="stylesheet" href="{{ url_for('static',filename = 'electrical_scouting.css')}}">
+      	<link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
+	</head>
+	<body>
+		<div id="topBar">
+      		<h2>Electrical Pit Scouting Form</h2>
+      	</div>
+      	<a href="/"><button id="backButton">< Back to Home</button></a>
+      	
+		<form method="POST" action="{{ url_for('submitted_electrical') }}">
+			<div>
+				<label>Did you use good wires?</label>
+				<p>Yes <input type="radio" name="goodWires" value="1"> </p>
+				<p>No <input type="radio" name="goodWires" value="0"> </p>
+			</div>
+			<button>Submit</button>
+		</form>
+	</body>
+</html>

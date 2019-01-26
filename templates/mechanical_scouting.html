@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mechanical Scouting Form</title>
+      	<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+      	<link rel="stylesheet" href="{{ url_for('static',filename = 'mechanical_scouting.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
+	</head>
+	<body>
+		<div id="topBar">
+      		<h2>Mechanical Pit Scouting Form</h2>
+      	</div>
+      	<a href="/"><button id="backButton">< Back to Home</button></a>
+		<form method="POST" action="{{ url_for('submitted_mechanical') }}">
+			<div>
+				<label>Notes</label>
+				<input type="text" name="notes" placeholder="Put text here">
+			</div>
+			<button>Submit</button>
+		</form>
+	</body>
+</html>
