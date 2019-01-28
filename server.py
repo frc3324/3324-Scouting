@@ -60,7 +60,23 @@ def submitted_programming():
 
 
 
-@app.route('/download_data', methods=['GET', 'POST'])
+
+@app.route('/programming_data', methods=['GET', 'POST'])
+def programming_csv():
+    database.create_programming_csv()
+    return send_file('programming.csv')
+
+@app.route('/electrical_data', methods=['GET', 'POST'])
+def electrical_csv():
+    database.create_electrical_csv()
+    return send_file('electrical.csv')
+
+@app.route('/mechanical_data', methods=['GET', 'POST'])
+def mechanical_csv():
+    database.create_mechanical_csv()
+    return send_file('mechanical.csv')
+
+@app.route('/match_data', methods=['GET', 'POST'])
 def download_csv():
     database.create_csv()
     return send_file('output.csv')

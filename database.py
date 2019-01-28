@@ -63,6 +63,36 @@ def submit_programming(usesGithub):
 
 
 
+
+def create_programming_csv():
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    data = cursor.execute("SELECT * FROM programming")
+    with open('programming.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(('Github?'))
+        writer.writerows(data)
+
+
+def create_electrical_csv():
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    data = cursor.execute("SELECT * FROM electrical")
+    with open('electrical.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(('Good Wires?'))
+        writer.writerows(data)
+
+def create_mechanical_csv():
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    data = cursor.execute("SELECT * FROM mechanical")
+    with open('mechanical.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(('Notes'))
+        writer.writerows(data)
+
+
 def create_csv():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
