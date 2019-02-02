@@ -30,20 +30,18 @@ def submit_mechanical(notes):
     conn.commit()
 
 
-
-
 def create_electrical_table():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     try:
-        cursor.execute('''CREATE TABLE electrical (goodWires int) ''')
+        cursor.execute('''CREATE TABLE electrical (teamNumber int, teamStructure text, numberOfMembers int, timeManagement text, waitsOnMechanical int, dictatedSizePosition text, timeToFinalize text, anythingDifferent text, anythingSpecial text, brownoutPrevention text, preseasonContent text, helpsWithStrategy int, pneumatics text, anyEncoders int, encodersUse text, canOrPwm text, wiredLEDs text, other text) ''')
     except Exception as e: print(e)
 
-def submit_electrical(goodWires):
+def submit_electrical(teamNumber, teamStructure, numberOfMembers, timeManagement, waitsOnMechanical, dictatedSizePosition, timeToFinalize, anythingDifferent, anythingSpecial, brownoutPrevention, preseasonContent, helpsWithStrategy, pneumatics, anyEncoders, encodersUse, canOrPwm, wiredLEDs, other):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    electrical_info = (int(goodWires));
-    cursor.execute("INSERT INTO electrical VALUES (?)", (goodWires,))
+    electrical_info = (int(teamNumber), teamStructure, int(numberOfMembers), timeManagement, int(waitsOnMechanical), dictatedSizePosition, timeToFinalize, anythingDifferent, anythingSpecial, brownoutPrevention, preseasonContent, int(helpsWithStrategy), pneumatics, int(anyEncoders), encodersUse, canOrPwm, wiredLEDs, other);
+    cursor.execute("INSERT INTO electrical VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (electrical_info))
     conn.commit()
 
 

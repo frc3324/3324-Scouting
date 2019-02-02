@@ -41,7 +41,7 @@ def electrical_scouting():
 
 @app.route('/submitted_electrical', methods=['GET', 'POST'])
 def submitted_electrical():
-    database.submit_electrical(goodWires=request.form['goodWires'])
+    database.submit_electrical(teamNumber=request.form['teamNumber'], teamStructure=request.form['teamStructure'], numberOfMembers=request.form['numberOfMembers'], timeManagement=request.form['timeManagement'], waitsOnMechanical=request.form['waitsOnMechanical'], dictatedSizePosition=request.form['dictatedSizePosition'], timeToFinalize=request.form['timeToFinalize'], anythingDifferent=request.form['anythingDifferent'], anythingSpecial=request.form['anythingSpecial'], brownoutPrevention=request.form['brownoutPrevention'], preseasonContent=request.form['preseasonContent'], helpsWithStrategy=request.form['helpsWithStrategy'], pneumatics=request.form['pneumatics'], anyEncoders=request.form['anyEncoders'], encodersUse=request.form['encodersUse'], canOrPwm=request.form['canOrPwm'], wiredLEDs=request.form['wiredLEDs'], other=request.form['other'])
     return render_template('submitted.html')
 
 
