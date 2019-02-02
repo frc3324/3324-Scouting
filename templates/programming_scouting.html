@@ -4,11 +4,12 @@
 		<title>Programming Scouting Form</title>
       	<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
       	<link rel="stylesheet" href="{{ url_for('static',filename = 'programming_scouting.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
 	</head>
 	<body>
 		<div id="topBar">
-      		<h2>Programming Pit Scouting Form</h2>
+      		<h2>Programming Pit Scouting</h2>
       	</div>
       	<a href="/"><button id="backButton">< Back to Home</button></a>
 		<form method="POST" action="{{ url_for('submitted_programming') }}">
@@ -16,6 +17,10 @@
 				<label>Do you use github?</label>
 				<p>Yes <input type="radio" name="usesGithub" value="1"> </p>
 				<p>No <input type="radio" name="usesGithub" value="0"> </p>
+			</div>
+			<div>
+				<label>How many people are on your programming team?</label>
+				<input type="number" name="progSize" value="1" min="1">
 			</div>
 			<button>Submit</button>
 		</form>

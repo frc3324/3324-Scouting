@@ -1,7 +1,6 @@
 h2 {
-	width: 400px;
+	width: 50%;
 	text-align: center;
-	text-decoration: underline;
 	margin: auto;
 }
 #topBar {
@@ -35,4 +34,16 @@ body {
 
 #backButton:hover {
 	background-color: #820d14;
+}
+
+@media (pointer:coarse) {
+	body {
+		padding-top: 100px;
+		font-size: 22px;
+	}
+	h2 {
+		width: 600px;
+		font-size: 45px;
+		margin-bottom: 10px;
+	}
 }

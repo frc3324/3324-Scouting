@@ -4,13 +4,27 @@ form {
 }
 div {
   margin-bottom: 20px;
+  /*text-align: center;*/
 }
 label {
   display: inline-block;
   width: 240px;
   text-align: right;
   padding-right: 10px;
+  margin-right: 35px;
 }
 button, input {
   float: right;
+}
+p {
+	width: 50px;
+	display: inline-block;
+}
+
+@media (pointer:coarse) {
+	form{ 
+		font-size: 60px;
+		width: 600px;
+		margin: auto; 
+	}
 }

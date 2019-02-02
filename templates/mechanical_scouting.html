@@ -5,16 +5,16 @@
       	<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
       	<link rel="stylesheet" href="{{ url_for('static',filename = 'mechanical_scouting.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
 	</head>
 	<body>
 		<div id="topBar">
-      		<h2>Mechanical Pit Scouting Form</h2>
+      		<h2>Mechanical Pit Scouting</h2>
       	</div>
       	<a href="/"><button id="backButton">< Back to Home</button></a>
-		<form method="POST" action="{{ url_for('submitted_mechanical') }}">
+		<form method="POST" action="{{ url_for('submitted_mechanical') }}" id="form">
 			<div>
-				<label>Notes</label>
-				<input type="text" name="notes" placeholder="Put text here">
+				<textarea form="form" name="notes" placeholder="Enter notes here..." rows="35" cols="60"></textarea>
 			</div>
 			<button>Submit</button>
 		</form>
