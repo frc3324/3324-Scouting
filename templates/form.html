@@ -7,6 +7,8 @@
       <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
+
+      <script type="text/javascript" src="{{ url_for('static', filename = 'autofill.js') }}"></script>
     </head>
     <body>
       <div id="topBar">
@@ -18,7 +20,7 @@
       <form method="POST" action="{{ url_for('submitted_match') }}">
         <div>
           <label for="team_number">Team Number</label>
-          <input type = "number" name="team" id="team_number" placeholder="3324" required>
+          <input type = "number" name="team" id="teamNumberInput" placeholder="3324" required>
         </div>
         <div>
           <label for="sandstorm_rocket_points">How many points did this team score in the rocket during sandstorm?</label>

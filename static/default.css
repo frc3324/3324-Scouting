@@ -1,3 +1,5 @@
+@font-face {font-family: openserif; src: url("font.ttf")}
+
 h2 {
 	width: 50%;
 	text-align: center;
@@ -16,6 +18,7 @@ h2 {
 }
 body {
 	padding-top: 80px;
+	font-family: openserif;
 }
 #backButton {
 	transition-duration: .15s;
@@ -30,10 +33,47 @@ body {
 	height: 70px;
 	border: none;
 	width: 150px;
+	font-family: openserif;
 }
 
 #backButton:hover {
 	background-color: #820d14;
+}
+
+.autocomplete-items {
+  background-color: #fff;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition-duration: .15s;
+  cursor: pointer;
+}
+.autocomplete-items:hover {
+  background-color: #b9b9b9;
+}
+
+#teamNumberInputautocomplete-list {
+  background-color: #b10003;
+  border: 2px solid #b3b3b3;
+  width: 154px;
+  text-align: center;
+  border-top: none;
+  position: absolute;
+  right: 0px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding-top: 10px;
+}
+
+form {
+	position:relative;
+}
+
+.autocompleteEmptyText {
+  color: white;
+  text-align: center;
+  width: 100%;
 }
 
 @media (pointer:coarse) {

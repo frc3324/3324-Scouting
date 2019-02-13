@@ -19,14 +19,14 @@ def create_mechanical_table():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     try:
-        cursor.execute('''CREATE TABLE mechanical (notes text) ''')
+        cursor.execute('''CREATE TABLE mechanical (teamNumber int, notes text) ''')
     except Exception as e: print(e)
 
-def submit_mechanical(notes):
+def submit_mechanical(teamNumber, notes):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    mechanical_info = (notes);
-    cursor.execute("INSERT INTO mechanical VALUES (?)", (mechanical_info,))
+    mechanical_info = (teamNumber, notes);
+    cursor.execute("INSERT INTO mechanical VALUES (?, ?)", (mechanical_info))
     conn.commit()
 
 
@@ -49,14 +49,14 @@ def create_programming_table():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     try:
-        cursor.execute('''CREATE TABLE programming (usesGithub int) ''')
+        cursor.execute('''CREATE TABLE programming (teamNumber int, usesGithub int, progSize int, programLang text, other text) ''')
     except Exception as e: print(e)
 
-def submit_programming(usesGithub):
+def submit_programming(teamNumber, usesGithub, progSize, programLang, other):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    programming_info = (int(usesGithub));
-    cursor.execute("INSERT INTO programming VALUES (?)", (usesGithub,))
+    programming_info = (int(teamNumber), int(usesGithub), int(progSize), programLang, other)
+    cursor.execute("INSERT INTO programming VALUES (?,?,?,?,?)", (programming_info))
     conn.commit()
 
 

@@ -6,6 +6,7 @@
       	<link rel="stylesheet" href="{{ url_for('static',filename = 'mechanical_scouting.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
+      <script type="text/javascript" src="{{ url_for('static', filename = 'autofill.js') }}"></script>
 	</head>
 	<body>
 		<div id="topBar">
@@ -14,7 +15,11 @@
       	<a href="/"><button id="backButton">< Back to Home</button></a>
 		<form method="POST" action="{{ url_for('submitted_mechanical') }}" id="form">
 			<div>
-				<textarea form="form" name="notes" placeholder="Enter notes here..." rows="35" cols="60"></textarea>
+          		<label for="team_number">Team Number</label>
+          		<input type="number" name="teamNumber" id="teamNumberInput" placeholder="3324" required>
+        	</div>
+			<div>
+				<textarea form="form" name="notes" placeholder="Enter notes here..." rows="35" cols="55"></textarea>
 			</div>
 			<button>Submit</button>
 		</form>

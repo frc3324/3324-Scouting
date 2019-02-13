@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_file
 import database
+import getJson
 
 app = Flask(__name__)
 database.create_table()
@@ -28,11 +29,8 @@ def mechanical_scouting():
 
 @app.route('/submitted_mechanical', methods=['GET', 'POST'])
 def submitted_mechanical():
-    database.submit_mechanical(notes=request.form['notes'])
+    database.submit_mechanical(teamNumber=request.form['teamNumber'], notes=request.form['notes'])
     return render_template('submitted.html')
-
-
-
 
 
 @app.route('/electrical_scouting', methods=['GET', 'POST'])
@@ -54,11 +52,8 @@ def programming_scouting():
 
 @app.route('/submitted_programming', methods=['GET', 'POST'])
 def submitted_programming():
-    database.submit_programming(usesGithub=request.form['usesGithub'])
+    database.submit_programming(teamNumber=request.form['teamNumber'], usesGithub=request.form['usesGithub'], progSize=request.form['progSize'], programLang=request.form['programLang'], other=request.form['other'])
     return render_template('submitted.html')
-
-
-
 
 
 @app.route('/programming_data', methods=['GET', 'POST'])
@@ -81,10 +76,17 @@ def download_csv():
     database.create_csv()
     return send_file('output.csv')
 
-@app.route('/graphic.png', methods=['GET', 'POST'])
-def graphic():
-    return send_file('graphic.png')
+@app.route('/font.ttf', methods=['GET', 'POST'])
+def font():
+    return send_file('font.ttf')
 
+@app.route('/2018ohcl.json', methods=['GET', 'POST'])
+def ohcl():
+    return send_file('2018ohcl.json')
+
+@app.route('/autofill.js', methods=['GET', 'POST'])
+def autofill():
+    return send_file('autofill.js')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

@@ -6,6 +6,7 @@
       	<link rel="stylesheet" href="{{ url_for('static',filename = 'electrical_scouting.css')}}">
       	<link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
+      <script type="text/javascript" src="{{ url_for('static', filename = 'autofill.js') }}"></script>
 	</head>
 	<body>
 		<div id="topBar">
@@ -16,7 +17,7 @@
 		<form method="POST" action="{{ url_for('submitted_electrical') }}">
 			<div>
 				<label>Team Number</label>
-				<input type="number" name="teamNumber" placeholder="3324" required>
+				<input type="number" name="teamNumber" placeholder="3324" id="teamNumberInput" required>
 			</div>
 			<div>
 				<label>What is your basic team structue?</label>

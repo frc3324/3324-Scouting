@@ -6,6 +6,7 @@
       	<link rel="stylesheet" href="{{ url_for('static',filename = 'programming_scouting.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
+      <script type="text/javascript" src="{{ url_for('static', filename = 'autofill.js') }}"></script>
 	</head>
 	<body>
 		<div id="topBar">
@@ -14,6 +15,10 @@
       	<a href="/"><button id="backButton">< Back to Home</button></a>
 		<form method="POST" action="{{ url_for('submitted_programming') }}">
 			<div>
+				<label>Team Number</label>
+				<input type="number" name="teamNumber" placeholder="3324" id="teamNumberInput" required>
+			</div>
+			<div>
 				<label>Do you use github?</label>
 				<p>Yes <input type="radio" name="usesGithub" value="1"> </p>
 				<p>No <input type="radio" name="usesGithub" value="0"> </p>
@@ -21,6 +26,14 @@
 			<div>
 				<label>How many people are on your programming team?</label>
 				<input type="number" name="progSize" value="1" min="1">
+			</div>
+			<div>
+				<label>What programming language do you primarily use?</label>
+				<input type="text" name="programLang" value="Language">
+			</div>
+			<div>
+				<label>Other Notes</label>
+				<input type="text" name="other" placeholder="None">
 			</div>
 			<button>Submit</button>
 		</form>
