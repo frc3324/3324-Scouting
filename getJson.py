@@ -26,10 +26,14 @@ fileE.write("{ \"teams\": [\n")
 a = 0
 b = len(information)
 for info in information:
+    nickname = info['nickname']
+    if "\"" in info['nickname']:
+        nickname = nickname.replace("\"", "'")
+
     if a < b-1:
-        fileE.write('{\n"teamNumber": ' + str(info['team_number']) + ',\n"nickname": "' + info['nickname'] + '"\n},\n')
+        fileE.write('{\n"teamNumber": ' + str(info['team_number']) + ',\n"nickname": "' + nickname + '"\n},\n')
     else:
-        fileE.write('{\n"teamNumber": ' + str(info['team_number']) + ',\n"nickname": "' + info['nickname'] + '"\n}\n')
+        fileE.write('{\n"teamNumber": ' + str(info['team_number']) + ',\n"nickname": "' + nickname + '"\n}\n')
     a+=1
 fileE.write("]}")
 fileE.close()
