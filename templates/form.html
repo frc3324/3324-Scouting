@@ -3,9 +3,10 @@
     <html>
     <head>
       <meta charset="utf-8">
-      <title>3324 Scouting Form</title>
+      <title>Match Scouting Form</title>
       <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'didntSeeTab.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
 
       <script type="text/javascript" src="{{ url_for('static', filename = 'autofill.js') }}"></script>
@@ -20,36 +21,69 @@
       <form method="POST" action="{{ url_for('submitted_match') }}">
         <div>
           <label for="team_number">Team Number</label>
-          <input type = "number" name="team" id="teamNumberInput" placeholder="3324" required>
-        </div>
-        <div>
-          <label for="sandstorm_rocket_points">How many points did this team score in the rocket during sandstorm?</label>
-          <input type = "number" name="sandstorm_rocket_points" id="sandstorm_rocket_points" value="0">
-        </div>
-          <div>
-          <label for="sandstorm_cargoship_points">How many points did this team score in the cargoship during sandstorm?</label>
-          <input type = "number" name="sandstorm_cargoship_points" id="sandstorm_cargoship_points" value="0">
+          <input type="number" name="team" id="teamNumberInput" placeholder="3324" required min="0" max="10000">
         </div>
         <div>
           <label for="starting_level">What level did this team start at</label>
-          <input type = "number" name="starting_level" id="starting_level" value="1">
+          <input type="number" name="starting_level" id="startingLevel" value="1" min="1" max="2">
         </div>
+
+        <hr>
+        <h4>Cargo Scored</h4>
+        <div class="scoringQuestions">
         <div>
-          <label for="teleop_rocket_points">How many points did this team score in the rocket during teleop?</label>
-          <input type = "number" name="teleop_rocket_points" id="teleop_rocket_points" value="0">
+          <label for="cargoHigh">High</label>
+          <input type="number" name="cargoHigh" min="0" value="0" max="2">
         </div>
+
         <div>
-          <label for="teleop_cargoship_points">How many points did this team score in the cargoship during teleop?</label>
-          <input type = "number" name="teleop_cargoship_points" id="teleop_cargoship_points" value="0">
+          <label for="cargoMid">Mid</label>
+          <input type="number" name="cargoMid" min="0" value="0" max="2">
         </div>
+
+        <div>
+          <label for="cargoLow">Low</label>
+          <input type="number" name="cargoLow" min="0" value="0" max="12">
+        </div>
+        </div>
+        <hr>
+
+
+        <h4>Hatches Scored</h4>
+        <div class="scoringQuestions">
+        <div>
+          <label for="hatchHigh">High</label>
+          <input type="number" name="hatchHigh" min="0" value="0" max="2">
+        </div>
+
+        <div>
+          <label for="hatchMid">Mid</label>
+          <input type="number" name="hatchMid" min="0" value="0" max="2">
+        </div>
+
+        <div>
+          <label for="hatchLow">Low</label>
+          <input type="number" name="hatchLow" min="0" value="0" max="12">
+        </div>
+        </div>
+        <hr>
+
+        <div>
+          <label for="climb">Did they go on the other side?</label>
+          <span class="radioButtons"> <p>Yes <input type="radio" required name="otherSide" value="1"> </p>
+          <p>No <input type="radio" required name="otherSide" value="0"> </p></span>
+        </div>
+
         <div>
           <label for="climb">What level did this team end at/climb to?</label>
-          <input type = "number" name="climb" id="climb" value="0">
+          <input type="number" name="climb" id="climb" value="0" min="0" max="3">
         </div>
         <div>
           <label for="other">Other Notes (Buddy climb, etc)</label>
-          <input type = "text" name="other" id="other" value="None">
+          <input type="text" name="other" id="other">
         </div>
+
+
         <div>
           <button>Submit</button>
         </div>

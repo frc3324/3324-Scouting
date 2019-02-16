@@ -1,7 +1,14 @@
 from flask import Flask, render_template, request, send_file
 import database
 import getJson
-
+import sys
+from os import system
+try:
+    if sys.argv[1] != "":
+        event_key = sys.argv[1]
+except:
+    event_key = "2018ohcl"
+system("python getJson.py " + event_key)
 app = Flask(__name__)
 database.create_table()
 database.create_mechanical_table()
@@ -18,7 +25,7 @@ def match_scouting():
 
 @app.route('/submitted_match', methods=['GET', 'POST'])
 def submitted_match():
-    database.submit(team_number=request.form['team'], sandstorm_rocket_points=request.form['sandstorm_rocket_points'], sandstorm_cargoship_points=request.form['sandstorm_cargoship_points'], starting_level=request.form['starting_level'], teleop_rocket_points=request.form['teleop_rocket_points'], teleop_cargoship_points=request.form['teleop_cargoship_points'], climb=request.form['climb'], other=request.form['other'])
+    database.submit(team_number=request.form['team'], starting_level=request.form['starting_level'], cargoHigh=request.form['cargoHigh'], cargoMid=request.form['cargoMid'], cargoLow=request.form['cargoLow'], hatchHigh=request.form['hatchHigh'], hatchMid=request.form['hatchMid'], hatchLow=request.form['hatchLow'], otherSide=request.form['otherSide'], climb=request.form['climb'], other=request.form['other'])
     return render_template('submitted.html')
 
 
@@ -80,9 +87,9 @@ def download_csv():
 def font():
     return send_file('font.ttf')
 
-@app.route('/2018ohcl.json', methods=['GET', 'POST'])
-def ohcl():
-    return send_file('2018ohcl.json')
+@app.route('/teamInformation.json', methods=['GET', 'POST'])
+def teamInformation():
+    return send_file('teamInformation.json')
 
 @app.route('/autofill.js', methods=['GET', 'POST'])
 def autofill():

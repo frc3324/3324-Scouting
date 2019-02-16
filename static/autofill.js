@@ -2,16 +2,12 @@ var data;
 var element;
 
 function loadJSON(callback) {   
-    //debugger;
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    var url = "/2018ohcl.json";
+    var url = "/teamInformation.json";
     xobj.onreadystatechange = function () {
-      console.log("Ready State: " + this.readyState);
-      console.log("Status: " + this.status);
         if (this.status == 200 && this.readyState == 4) {
           data = JSON.parse(this.responseText);
-          console.log("Data: " + data)
           autocomplete(element, data);
         }
     };
@@ -34,8 +30,6 @@ function autocomplete(inp, arr) {
       a.setAttribute("id", this.id + "autocomplete-list");
       a.setAttribute("class", "autocomplete-item-lists");
       this.parentNode.appendChild(a);
-      console.log(arr)
-      console.log(arr.length)
 
       for (i = 0; i < arr.length; i++) {
         if (String(arr[i].teamNumber).substr(0, val.length).toUpperCase() == String(val).toUpperCase()) {

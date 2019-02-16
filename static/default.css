@@ -6,7 +6,6 @@ h2 {
 	margin: auto;
 }
 #topBar {
-	display: table;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -17,6 +16,7 @@ h2 {
 	padding-top: 20px;
 }
 body {
+	text-align: center;
 	padding-top: 80px;
 	font-family: openserif;
 }
@@ -55,8 +55,7 @@ body {
 
 #teamNumberInputautocomplete-list {
   background-color: #b10003;
-  border: 2px solid #b3b3b3;
-  width: 154px;
+  width: 158px;
   text-align: center;
   border-top: none;
   position: absolute;
@@ -64,6 +63,17 @@ body {
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
   padding-top: 10px;
+}
+
+.scoringQuestions {
+  margin: auto;
+}
+.scoringQuestions label {
+  width: 50px;
+}
+.scoringQuestions input[type="number"] {
+  float: none;
+  width: 40px;
 }
 
 form {
@@ -76,6 +86,7 @@ form {
   width: 100%;
 }
 
+/*
 @media (pointer:coarse) {
 	body {
 		padding-top: 100px;
@@ -86,4 +97,4 @@ form {
 		font-size: 45px;
 		margin-bottom: 10px;
 	}
-}
+}*/

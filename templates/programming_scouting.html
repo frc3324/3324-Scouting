@@ -3,7 +3,6 @@
 	<head>
 		<title>Programming Scouting Form</title>
       	<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
-      	<link rel="stylesheet" href="{{ url_for('static',filename = 'programming_scouting.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
       <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
       <script type="text/javascript" src="{{ url_for('static', filename = 'autofill.js') }}"></script>
@@ -20,8 +19,8 @@
 			</div>
 			<div>
 				<label>Do you use github?</label>
-				<p>Yes <input type="radio" name="usesGithub" value="1"> </p>
-				<p>No <input type="radio" name="usesGithub" value="0"> </p>
+				<p>Yes <input type="radio" required name="usesGithub" value="1"> </p>
+				<p>No <input type="radio" required name="usesGithub" value="0"> </p>
 			</div>
 			<div>
 				<label>How many people are on your programming team?</label>
