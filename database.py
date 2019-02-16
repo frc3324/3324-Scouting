@@ -5,14 +5,14 @@ def create_table():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     try:
-        cursor.execute('''CREATE TABLE scouting (team_number int , starting_level int , cargoHigh int, cargoMid int, cargoLow int, hatchHigh int, hatchMid int, hatchLow int, climb int, other text)''')
+        cursor.execute('''CREATE TABLE scouting (team_number int , matchNumber int ,  starting_level int , cargoHigh int, cargoMid int, cargoLow int, hatchHigh int, hatchMid int, hatchLow int, climb int, other text)''')
     except Exception as e: print(e)
 
-def submit(team_number, starting_level, cargoHigh, cargoMid, cargoLow, hatchHigh, hatchMid, hatchLow, otherSide, climb, other):
+def submit(team_number, matchNumber, starting_level, cargoHigh, cargoMid, cargoLow, hatchHigh, hatchMid, hatchLow, otherSide, climb, other):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    scouting_info = (int(team_number), int(starting_level), int(cargoHigh), int(cargoMid), int(cargoLow), int(hatchHigh), int(hatchMid), int(hatchLow), int(climb), other)
-    cursor.execute("INSERT INTO scouting VALUES (?,?,?,?,?,?,?,?,?,?)", scouting_info)
+    scouting_info = (int(team_number), int(matchNumber), int(starting_level), int(cargoHigh), int(cargoMid), int(cargoLow), int(hatchHigh), int(hatchMid), int(hatchLow), int(climb), other)
+    cursor.execute("INSERT INTO scouting VALUES (?,?,?,?,?,?,?,?,?,?,?)", scouting_info)
     conn.commit()
 
 def create_mechanical_table():

@@ -25,7 +25,7 @@ def match_scouting():
 
 @app.route('/submitted_match', methods=['GET', 'POST'])
 def submitted_match():
-    database.submit(team_number=request.form['team'], starting_level=request.form['starting_level'], cargoHigh=request.form['cargoHigh'], cargoMid=request.form['cargoMid'], cargoLow=request.form['cargoLow'], hatchHigh=request.form['hatchHigh'], hatchMid=request.form['hatchMid'], hatchLow=request.form['hatchLow'], otherSide=request.form['otherSide'], climb=request.form['climb'], other=request.form['other'])
+    database.submit(team_number=request.form['team'], matchNumber=request.form['matchNumber'], starting_level=request.form['starting_level'], cargoHigh=request.form['cargoHigh'], cargoMid=request.form['cargoMid'], cargoLow=request.form['cargoLow'], hatchHigh=request.form['hatchHigh'], hatchMid=request.form['hatchMid'], hatchLow=request.form['hatchLow'], otherSide=request.form['otherSide'], climb=request.form['climb'], other=request.form['other'])
     return render_template('submitted.html')
 
 
