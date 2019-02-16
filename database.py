@@ -59,7 +59,37 @@ def submit_programming(teamNumber, usesGithub, progSize, programLang, other):
     cursor.execute("INSERT INTO programming VALUES (?,?,?,?,?)", (programming_info))
     conn.commit()
 
+#BAM Stuff
 
+def create_media_table():
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    try:
+        cursor.execute('''CREATE TABLE media (teamNumber int, notes text) ''')
+    except Exception as e: print(e)
+
+def submit_media(teamNumber, notes):
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    media_info = (teamNumber, notes);
+    cursor.execute("INSERT INTO media VALUES (?, ?)", (media_info))
+    conn.commit()
+
+def create_fundraising_table():
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    try:
+        cursor.execute('''CREATE TABLE fundraising (teamNumber int, notes text) ''')
+    except Exception as e: print(e)
+
+def submit_fundraising(teamNumber, notes):
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    fundraising_info = (teamNumber, notes);
+    cursor.execute("INSERT INTO fundraising VALUES (?, ?)", (fundraising_info))
+    conn.commit()
+
+#CSV Exports
 
 def create_programming_csv():
     conn = sqlite3.connect('scouting.db')

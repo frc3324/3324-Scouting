@@ -9,11 +9,14 @@ h2 {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	background-color: #b10003;
+	background: url('icon.png'), #b10003;
 	width: 100%;
 	color: white;
 	height: 50px;
 	padding-top: 20px;
+	background-size: 50px;
+	background-repeat: no-repeat;
+	background-position: right;
 }
 body {
 	text-align: center;

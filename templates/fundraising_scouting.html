@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fundraising Scouting Form</title>
+      	<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
+      <script type="text/javascript" src="{{ url_for('static', filename = 'autofill.js') }}"></script>
+	</head>
+	<body>
+		<div id="topBar">
+      		<h2>Fundraising Pit Scouting</h2>
+      	</div>
+      	<a href="/"><button id="backButton">< Back to Home</button></a>
+		<form method="POST" action="{{ url_for('submitted_fundraising') }}" id="form">
+			<div>
+          		<label for="team_number">Team Number</label>
+          		<input type="number" name="teamNumber" id="teamNumberInput" placeholder="3324" required>
+        	</div>
+			<div>
+				<textarea form="form" name="notes" placeholder="Enter notes here..." rows="35" cols="55"></textarea>
+			</div>
+			<button>Submit</button>
+		</form>
+	</body>
+</html>
