@@ -119,6 +119,24 @@ def create_mechanical_csv():
         writer.writerow(('Notes'))
         writer.writerows(data)
 
+def create_fundraising_csv():
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    data = cursor.execute("SELECT * FROM fundraising")
+    with open('fundraising.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(('Notes'))
+        writer.writerows(data)
+
+def create_media_csv():
+    conn = sqlite3.connect('scouting.db')
+    cursor = conn.cursor()
+    data = cursor.execute("SELECT * FROM media")
+    with open('media.csv', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(('Notes'))
+        writer.writerows(data)
+
 
 def create_csv():
     conn = sqlite3.connect('scouting.db')
