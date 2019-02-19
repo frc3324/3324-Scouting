@@ -30,11 +30,3 @@ input[type="text"], input[type="number"] {
     padding-left: 9px;
     vertical-align: top;
 }
-
-@media (pointer:coarse) {
-	form{ 
-		font-size: 60px;
-		width: 600px;
-		margin: auto; 
-	}
-}
