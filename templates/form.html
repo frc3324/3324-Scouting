@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
 
       <script type="text/javascript" src="{{ url_for('static', filename = 'autofill.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename = 'clientSideCSV.js') }}"></script>
     </head>
     <body>
       <div id="topBar">
@@ -88,6 +89,8 @@
 
 
         <div>
+          <a id="submitButton" onclick="downloadFile()">Download .csv File</a> <br>
+
           <button>Submit</button>
         </div>
       </form>

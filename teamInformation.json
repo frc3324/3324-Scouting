@@ -4,124 +4,120 @@
 "nickname": "Bad Robots"
 },
 {
-"teamNumber": 1126,
-"nickname": "SPARX"
+"teamNumber": 1038,
+"nickname": "Lakota Robotics"
 },
 {
-"teamNumber": 120,
-"nickname": "Cleveland's Team"
+"teamNumber": 128,
+"nickname": "The Botcats"
 },
 {
-"teamNumber": 1248,
-"nickname": "TITANium Allies"
+"teamNumber": 1308,
+"nickname": "Wildcats"
 },
 {
 "teamNumber": 1317,
 "nickname": "Digital Fusion"
 },
 {
-"teamNumber": 1405,
-"nickname": "Finney Falcons"
+"teamNumber": 144,
+"nickname": "The R.O.C.K"
 },
 {
-"teamNumber": 1507,
-"nickname": "Warlocks"
+"teamNumber": 156,
+"nickname": "RPM  - Robotics Plus Mayhem "
 },
 {
-"teamNumber": 1590,
-"nickname": "Titaniums"
+"teamNumber": 1708,
+"nickname": "AMP'D Robotics"
 },
 {
-"teamNumber": 1592,
-"nickname": "Bionic Tigers"
+"teamNumber": 1787,
+"nickname": "Flying Circuits"
 },
 {
-"teamNumber": 1758,
-"nickname": "Technomancers"
-},
-{
-"teamNumber": 2010,
-"nickname": "The Lightning Bots"
+"teamNumber": 2051,
+"nickname": "The Beattie Bulldogs"
 },
 {
 "teamNumber": 2172,
 "nickname": "Street Legal"
 },
 {
-"teamNumber": 2228,
-"nickname": "CougarTech"
+"teamNumber": 2202,
+"nickname": "BEAST Robotics"
 },
 {
-"teamNumber": 2340,
-"nickname": "Xcentrics"
+"teamNumber": 2383,
+"nickname": "Ninjineers"
 },
 {
-"teamNumber": 2399,
-"nickname": "The Fighting Unicorns"
+"teamNumber": 2603,
+"nickname": "Steel Stingers"
 },
 {
-"teamNumber": 2614,
-"nickname": "Mountaineer Area RoboticS (MARS)"
+"teamNumber": 279,
+"nickname": "Tech Fusion"
 },
 {
-"teamNumber": 2783,
-"nickname": "Engineers of Tomorrow "
+"teamNumber": 3010,
+"nickname": "The Red Plague"
 },
 {
-"teamNumber": 291,
-"nickname": "CIA - Creativity In Action"
+"teamNumber": 302,
+"nickname": "The Dragons"
 },
 {
 "teamNumber": 3138,
 "nickname": "Innovators Robotics"
 },
 {
-"teamNumber": 3193,
-"nickname": "Falco Tech"
+"teamNumber": 3201,
+"nickname": "Ross Rambotics"
 },
 {
 "teamNumber": 3266,
 "nickname": "Robots-R-Us"
 },
 {
-"teamNumber": 3314,
-"nickname": "Mechanical Mustangs"
-},
-{
 "teamNumber": 3324,
 "nickname": "The Metrobots"
+},
+{
+"teamNumber": 337,
+"nickname": "Hard Working Hard Hats"
 },
 {
 "teamNumber": 3484,
 "nickname": "Short Circuit"
 },
 {
-"teamNumber": 3591,
-"nickname": "Wild WarBots 'WWB'"
+"teamNumber": 3492,
+"nickname": "Putnam Area Robotics Team (P.A.R.T.s)"
 },
 {
-"teamNumber": 379,
-"nickname": "The RoboCats"
+"teamNumber": 3504,
+"nickname": "Girls of Steel"
+},
+{
+"teamNumber": 3777,
+"nickname": "Bean City Bots"
+},
+{
+"teamNumber": 3792,
+"nickname": "The Army Ants"
 },
 {
 "teamNumber": 3814,
 "nickname": "PiBotics"
 },
 {
-"teamNumber": 4020,
-"nickname": "Cyber Tribe"
+"teamNumber": 4027,
+"nickname": "Centre County 4-H Robotics"
 },
 {
-"teamNumber": 4085,
-"nickname": "Technical Difficulties"
-},
-{
-"teamNumber": 4119,
-"nickname": "AERO (Avon Eagles Robotics Organization)"
-},
-{
-"teamNumber": 4121,
-"nickname": "Viking  Robotics"
+"teamNumber": 4028,
+"nickname": "The Beak Squad"
 },
 {
 "teamNumber": 4145,
@@ -132,68 +128,88 @@
 "nickname": "FRobotics"
 },
 {
+"teamNumber": 4269,
+"nickname": "CardinalBots"
+},
+{
+"teamNumber": 4283,
+"nickname": "INSPIRE Robotics"
+},
+{
+"teamNumber": 4284,
+"nickname": "ScotBot4284"
+},
+{
+"teamNumber": 4467,
+"nickname": "Titanium Titans"
+},
+{
 "teamNumber": 451,
 "nickname": "The Cat Attack"
 },
 {
-"teamNumber": 4601,
-"nickname": "Circuit Birds"
+"teamNumber": 4521,
+"nickname": "Harrison Robotics"
 },
 {
 "teamNumber": 4611,
 "nickname": "OZone Robotics"
 },
 {
-"teamNumber": 4780,
-"nickname": "Tenacious Drones"
-},
-{
-"teamNumber": 5030,
-"nickname": "The Second Mouse"
+"teamNumber": 537,
+"nickname": "Charger Robotics"
 },
 {
 "teamNumber": 5413,
 "nickname": "Stellar Robotics"
 },
 {
-"teamNumber": 5418,
-"nickname": "The Sonic Screwdrivers"
+"teamNumber": 5492,
+"nickname": "Winner's Circle Robo Jockey's"
+},
+{
+"teamNumber": 554,
+"nickname": "The Bluegrease Crew"
 },
 {
 "teamNumber": 5667,
 "nickname": "The Digital Eagles"
 },
 {
+"teamNumber": 5724,
+"nickname": "Spartan Robotics"
+},
+{
+"teamNumber": 5740,
+"nickname": "Trojanators"
+},
+{
+"teamNumber": 5811,
+"nickname": "BONDS"
+},
+{
 "teamNumber": 5973,
 "nickname": "Moonshots"
 },
 {
-"teamNumber": 6027,
-"nickname": "Brain Waves"
+"teamNumber": 6032,
+"nickname": "Pirate Robotics"
 },
 {
-"teamNumber": 6181,
-"nickname": "Cryptic Cyborgs"
+"teamNumber": 6084,
+"nickname": "Swoop Robotics"
 },
 {
-"teamNumber": 6355,
-"nickname": "Robots Over Parma"
+"teamNumber": 677,
+"nickname": "Murphy's Outlaws"
 },
 {
-"teamNumber": 6460,
-"nickname": "Air Guardians"
+"teamNumber": 6834,
+"nickname": "Bionic Warriors"
 },
 {
-"teamNumber": 648,
-"nickname": "QC ELITE - Flaming Squirrels"
-},
-{
-"teamNumber": 6490,
-"nickname": "Panther Robotics"
-},
-{
-"teamNumber": 6916,
-"nickname": "Iron Thunder"
+"teamNumber": 6927,
+"nickname": "The Franklinton Firebirds"
 },
 {
 "teamNumber": 6936,
@@ -208,15 +224,19 @@
 "nickname": "BearBots"
 },
 {
-"teamNumber": 7043,
-"nickname": "RoboPirates"
-},
-{
-"teamNumber": 7055,
-"nickname": "Quantum Steam"
-},
-{
 "teamNumber": 7165,
 "nickname": "Perkins Pirates "
+},
+{
+"teamNumber": 7434,
+"nickname": "Beyond The Stars"
+},
+{
+"teamNumber": 7460,
+"nickname": "Avi and Friends"
+},
+{
+"teamNumber": 7486,
+"nickname": "Hudson Hybrids"
 }
 ]}

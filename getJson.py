@@ -15,10 +15,10 @@ if __name__ == "__main__":
         if sys.argv[1] != "":
             event_key = sys.argv[1]
     except:
-        event_key = "2018ohcl"
+        event_key = "2019ohmv"
 
-    extraPath = "/" 
-        
+    extraPath = "/"
+
     filename = "teamInformation.json"
     tba = tbapy.TBA("Hc4ZR47A3dCfAWaWvmVkI3k8aMjfvkL8jds4Jg23xVkk9kT2FdvMx5WQlG1cciIy")
     information = tba.event_teams(event_key, simple=True)
@@ -30,7 +30,6 @@ if __name__ == "__main__":
         nickname = info['nickname']
         if "\"" in info['nickname']:
             nickname = nickname.replace("\"", "'")
-        nickname = nickname.encode("ascii","ignore")
 
         if a < b-1:
             fileE.write('{\n"teamNumber": ' + str(info['team_number']) + ',\n"nickname": "' + nickname + '"\n},\n')

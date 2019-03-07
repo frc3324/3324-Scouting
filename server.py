@@ -3,12 +3,12 @@ import database
 import getJson
 import sys
 from os import system
-try:
-    if sys.argv[1] != "":
-        event_key = sys.argv[1]
-except:
-    event_key = "2018ohcl"
-system("python getJson.py " + event_key)
+#try:
+#    if sys.argv[1] != "":
+#        event_key = sys.argv[1]
+#except:
+#    event_key = "2019ohmv"
+#system("python3 getJson.py " + event_key)
 app = Flask(__name__)
 database.create_table()
 database.create_mechanical_table()

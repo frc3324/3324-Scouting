@@ -5,14 +5,14 @@ def create_table():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     try:
-        cursor.execute('''CREATE TABLE scouting (team_number int , matchNumber int ,  starting_level int , cargoHigh int, cargoMid int, cargoLow int, hatchHigh int, hatchMid int, hatchLow int, climb int, other text)''')
+        cursor.execute('''CREATE TABLE scouting (team_number int , matchNumber int ,  starting_level int , cargoHigh int, cargoMid int, cargoLow int, hatchHigh int, hatchMid int, hatchLow int, otherSide int, climb int, other text)''')
     except Exception as e: print(e)
 
 def submit(team_number, matchNumber, starting_level, cargoHigh, cargoMid, cargoLow, hatchHigh, hatchMid, hatchLow, otherSide, climb, other):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    scouting_info = (int(team_number), int(matchNumber), int(starting_level), int(cargoHigh), int(cargoMid), int(cargoLow), int(hatchHigh), int(hatchMid), int(hatchLow), int(climb), other)
-    cursor.execute("INSERT INTO scouting VALUES (?,?,?,?,?,?,?,?,?,?,?)", scouting_info)
+    scouting_info = (int(team_number), int(matchNumber), int(starting_level), int(cargoHigh), int(cargoMid), int(cargoLow), int(hatchHigh), int(hatchMid), int(hatchLow), int(otherSide), int(climb), other)
+    cursor.execute("INSERT INTO scouting VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", scouting_info)
     conn.commit()
 
 def create_mechanical_table():
@@ -144,5 +144,5 @@ def create_csv():
     data = cursor.execute("SELECT * FROM scouting")
     with open('output.csv', 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(('Team Number', 'Starting Point', 'Cargo High', 'Cargo Mid', 'Cargo Low', 'Hatch High', 'Hatch Mid', 'Hatch Low', 'Climb', 'Other'))
+        writer.writerow(('Team Number', 'Match Number', 'Starting Point', 'Cargo High', 'Cargo Mid', 'Cargo Low', 'Hatch High', 'Hatch Mid', 'Hatch Low', 'Other Side', 'Climb', 'Other'))
         writer.writerows(data)
