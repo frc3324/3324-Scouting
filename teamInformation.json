@@ -1,23 +1,11 @@
 { "teams": [
 {
-"teamNumber": 1014,
-"nickname": "Bad Robots"
+"teamNumber": 102,
+"nickname": "The Gearheads"
 },
 {
-"teamNumber": 1038,
-"nickname": "Lakota Robotics"
-},
-{
-"teamNumber": 128,
-"nickname": "The Botcats"
-},
-{
-"teamNumber": 1308,
-"nickname": "Wildcats"
-},
-{
-"teamNumber": 1317,
-"nickname": "Digital Fusion"
+"teamNumber": 117,
+"nickname": "The Steel Dragons"
 },
 {
 "teamNumber": 144,
@@ -32,6 +20,10 @@
 "nickname": "AMP'D Robotics"
 },
 {
+"teamNumber": 1743,
+"nickname": "Short Circuits"
+},
+{
 "teamNumber": 1787,
 "nickname": "Flying Circuits"
 },
@@ -40,44 +32,32 @@
 "nickname": "The Beattie Bulldogs"
 },
 {
-"teamNumber": 2172,
-"nickname": "Street Legal"
+"teamNumber": 2053,
+"nickname": "TigerTronics"
 },
 {
-"teamNumber": 2202,
-"nickname": "BEAST Robotics"
+"teamNumber": 2641,
+"nickname": "PCCR"
 },
 {
-"teamNumber": 2383,
-"nickname": "Ninjineers"
+"teamNumber": 2656,
+"nickname": "Quasics"
 },
 {
-"teamNumber": 2603,
-"nickname": "Steel Stingers"
+"teamNumber": 291,
+"nickname": "CIA - Creativity In Action"
 },
 {
-"teamNumber": 279,
-"nickname": "Tech Fusion"
-},
-{
-"teamNumber": 3010,
-"nickname": "The Red Plague"
-},
-{
-"teamNumber": 302,
-"nickname": "The Dragons"
-},
-{
-"teamNumber": 3138,
-"nickname": "Innovators Robotics"
+"teamNumber": 3062,
+"nickname": "Spartan Robotics"
 },
 {
 "teamNumber": 3201,
 "nickname": "Ross Rambotics"
 },
 {
-"teamNumber": 3266,
-"nickname": "Robots-R-Us"
+"teamNumber": 3260,
+"nickname": "SHARP"
 },
 {
 "teamNumber": 3324,
@@ -88,10 +68,6 @@
 "nickname": "Hard Working Hard Hats"
 },
 {
-"teamNumber": 3484,
-"nickname": "Short Circuit"
-},
-{
 "teamNumber": 3492,
 "nickname": "Putnam Area Robotics Team (P.A.R.T.s)"
 },
@@ -100,24 +76,32 @@
 "nickname": "Girls of Steel"
 },
 {
-"teamNumber": 3777,
-"nickname": "Bean City Bots"
+"teamNumber": 379,
+"nickname": "The RoboCats"
 },
 {
-"teamNumber": 3792,
-"nickname": "The Army Ants"
+"teamNumber": 3954,
+"nickname": "4-H Electrotechs"
 },
 {
-"teamNumber": 3814,
-"nickname": "PiBotics"
+"teamNumber": 3957,
+"nickname": "4-H Robo Rangers"
 },
 {
 "teamNumber": 4027,
 "nickname": "Centre County 4-H Robotics"
 },
 {
-"teamNumber": 4028,
-"nickname": "The Beak Squad"
+"teamNumber": 4049,
+"nickname": "Knoch Knights Robotics"
+},
+{
+"teamNumber": 4050,
+"nickname": "Biohazard"
+},
+{
+"teamNumber": 4085,
+"nickname": "Technical Difficulties"
 },
 {
 "teamNumber": 4145,
@@ -132,52 +116,24 @@
 "nickname": "CardinalBots"
 },
 {
-"teamNumber": 4283,
-"nickname": "INSPIRE Robotics"
-},
-{
-"teamNumber": 4284,
-"nickname": "ScotBot4284"
-},
-{
 "teamNumber": 4467,
 "nickname": "Titanium Titans"
 },
 {
-"teamNumber": 451,
-"nickname": "The Cat Attack"
+"teamNumber": 4547,
+"nickname": "WestyTek"
 },
 {
-"teamNumber": 4521,
-"nickname": "Harrison Robotics"
+"teamNumber": 4780,
+"nickname": "Tenacious Drones"
 },
 {
-"teamNumber": 4611,
-"nickname": "OZone Robotics"
+"teamNumber": 48,
+"nickname": "Team E.L.I.T.E."
 },
 {
-"teamNumber": 537,
-"nickname": "Charger Robotics"
-},
-{
-"teamNumber": 5413,
-"nickname": "Stellar Robotics"
-},
-{
-"teamNumber": 5492,
-"nickname": "Winner's Circle Robo Jockey's"
-},
-{
-"teamNumber": 554,
-"nickname": "The Bluegrease Crew"
-},
-{
-"teamNumber": 5667,
-"nickname": "The Digital Eagles"
-},
-{
-"teamNumber": 5724,
-"nickname": "Spartan Robotics"
+"teamNumber": 4991,
+"nickname": "Horsepower"
 },
 {
 "teamNumber": 5740,
@@ -188,55 +144,39 @@
 "nickname": "BONDS"
 },
 {
-"teamNumber": 5973,
-"nickname": "Moonshots"
+"teamNumber": 5842,
+"nickname": "Royal Robotics"
 },
 {
 "teamNumber": 6032,
 "nickname": "Pirate Robotics"
 },
 {
-"teamNumber": 6084,
-"nickname": "Swoop Robotics"
+"teamNumber": 63,
+"nickname": "McDowell Robotics Team 63"
 },
 {
 "teamNumber": 677,
 "nickname": "Murphy's Outlaws"
 },
 {
-"teamNumber": 6834,
-"nickname": "Bionic Warriors"
-},
-{
-"teamNumber": 6927,
-"nickname": "The Franklinton Firebirds"
-},
-{
-"teamNumber": 6936,
-"nickname": "Vault 6936"
-},
-{
-"teamNumber": 695,
-"nickname": "Bison Robotics"
-},
-{
-"teamNumber": 6964,
-"nickname": "BearBots"
-},
-{
 "teamNumber": 7165,
 "nickname": "Perkins Pirates "
 },
 {
-"teamNumber": 7434,
-"nickname": "Beyond The Stars"
+"teamNumber": 7274,
+"nickname": "Brashear Bulls Robotics"
 },
 {
 "teamNumber": 7460,
 "nickname": "Avi and Friends"
 },
 {
-"teamNumber": 7486,
-"nickname": "Hudson Hybrids"
+"teamNumber": 7515,
+"nickname": "Dark Side Robotics"
+},
+{
+"teamNumber": 7670,
+"nickname": "Highlanders"
 }
 ]}

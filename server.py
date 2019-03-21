@@ -7,7 +7,7 @@ from os import system
 #    if sys.argv[1] != "":
 #        event_key = sys.argv[1]
 #except:
-#    event_key = "2019ohmv"
+#event_key = "2019paca"
 #system("python3 getJson.py " + event_key)
 app = Flask(__name__)
 database.create_table()
