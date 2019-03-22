@@ -1,7 +1,11 @@
+@font-face {font-family: openserif; src: url("font.ttf")}
+@font-face {font-family: roboto-thin; src: url("font-thin.ttf")}
+
 form {
     width: 420px;
     margin: auto;
     margin-bottom: 100px;
+    position: relative;
 }
 div {
   margin-bottom: 20px;
@@ -29,4 +33,102 @@ input[type="text"], input[type="number"] {
     line-height: 21px;
     padding-left: 9px;
     vertical-align: top;
+}
+.autocomplete-items {
+  background-color: #fff;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition-duration: .15s;
+  cursor: pointer;
+}
+.autocomplete-items:hover {
+  background-color: #b9b9b9;
+}
+
+#teamNumberInputautocomplete-list {
+  background-color: #b10003;
+  width: 158px;
+  text-align: center;
+  border-top: none;
+  position: absolute;
+  right: 0px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding-top: 10px;
+}
+
+.scoringQuestions {
+  margin: auto;
+}
+.scoringQuestions label {
+  width: 50px;
+}
+.scoringQuestions input[type="number"] {
+  float: none;
+  width: 40px;
+}
+
+
+.radioButtons p {
+	font-family: roboto-thin;
+}
+
+.autocompleteEmptyText {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+form div br {
+	display: none;
+}
+
+
+@media only screen and (max-width: 1080px) {
+	form div br {
+		display: inherit;
+	}
+	.radioButtons p {
+		font-size: 40px;
+	}
+	.scoringQuestions label {
+    width: 9%;
+	}
+	input[type="radio"] {
+		height: 50px;
+		width: 50px;
+	}
+	input[type="text"], input[type="number"] {
+    width: 80%;
+    font-size: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+	}
+  button, input[type="text"], input[type="number"] {
+    float: none;
+  }
+	form {
+		width: 100%;
+	}
+	form h2 {
+		font-size: 60px;
+	}
+	form label {
+		font-size: 40px;
+		width: 100%;
+    text-align: center;
+	}
+	button {
+		width: 100%;
+		height: 70px;
+		background-color: #b10003;
+		color: white;
+		border-radius: 6px;
+		border: 0;
+		font-size: 40px;
+		padding: 6px;
+		font-family: openserif;
+	}
 }

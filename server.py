@@ -115,6 +115,10 @@ def icon():
 def font():
     return send_file('font.ttf')
 
+@app.route('/font-thin.ttf', methods=['GET', 'POST'])
+def fontthin():
+    return send_file('font-thin.ttf')
+
 @app.route('/teamInformation.json', methods=['GET', 'POST'])
 def teamInformation():
     return send_file('teamInformation.json')

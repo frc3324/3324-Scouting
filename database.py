@@ -1,5 +1,6 @@
 import csv
 import sqlite3
+import re;
 
 def create_table():
     conn = sqlite3.connect('scouting.db')
@@ -95,6 +96,7 @@ def create_programming_csv():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     data = cursor.execute("SELECT * FROM programming")
+    re.sub(r'[^\x00-\x7F]', r'', data);
     with open('programming.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(('Github?'))
@@ -105,6 +107,7 @@ def create_electrical_csv():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     data = cursor.execute("SELECT * FROM electrical")
+    re.sub(r'[^\x00-\x7F]', r'', data);
     with open('electrical.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(('Good Wires?'))
@@ -114,6 +117,7 @@ def create_mechanical_csv():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     data = cursor.execute("SELECT * FROM mechanical")
+    re.sub(r'[^\x00-\x7F]', r'', data);
     with open('mechanical.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(('Notes'))

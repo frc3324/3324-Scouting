@@ -1,10 +1,12 @@
 @font-face {font-family: openserif; src: url("font.ttf")}
+@font-face {font-family: roboto-thin; src: url("font-thin.ttf")}
 
 h2 {
 	width: 50%;
 	text-align: center;
 	margin: auto;
 }
+
 #topBar {
 	position: absolute;
 	top: 0px;
@@ -18,11 +20,13 @@ h2 {
 	background-repeat: no-repeat;
 	background-position: right;
 }
+
 body {
 	text-align: center;
-	padding-top: 80px;
+	padding-top: 90px;
 	font-family: openserif;
 }
+
 #backButton {
 	transition-duration: .15s;
 	position: absolute;
@@ -33,117 +37,42 @@ body {
 	font-size: 15px;
 	color: white;
 	cursor: pointer;
-	height: 10%;
+	height: 70px;
 	border: none;
 	width: 13%;
 	font-family: openserif;
+}
+
+h2 {
+	font-size: 30px;
 }
 
 #backButton:hover {
 	background-color: #0003;
 }
 
-.autocomplete-items {
-  background-color: #fff;
-  width: 80%;
-  margin: auto;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  transition-duration: .15s;
-  cursor: pointer;
-}
-.autocomplete-items:hover {
-  background-color: #b9b9b9;
-}
-
-#teamNumberInputautocomplete-list {
-  background-color: #b10003;
-  width: 158px;
-  text-align: center;
-  border-top: none;
-  position: absolute;
-  right: 0px;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-  padding-top: 10px;
-}
-
-.scoringQuestions {
-  margin: auto;
-}
-.scoringQuestions label {
-  width: 50px;
-}
-.scoringQuestions input[type="number"] {
-  float: none;
-  width: 40px;
-}
-
-form {
-	position:relative;
-}
-
-.autocompleteEmptyText {
-  color: white;
-  text-align: center;
-  width: 100%;
-}
-
 @media only screen and (max-width: 1080px) {
-	.radioButtons p {
+	body {
+		padding-top: 15%;
+	}
+	#backButton {
+		height: 22.5%;
+		width: 22%;
+		font-size: 25px;
+	}
+	#topBar {
+		height: initial;
+		background-size: 9%;
+	}
+	h2 {
+		padding-top: 0;
+		padding-bottom: 3%;
 		font-size: 40px;
-	}
-	.scoringQuestions label {
-    width: 9%;
-	}
-	input[type="radio"] {
-		height: 50px;
-		width: 50px;
-	}
-	input[type="text"], input[type="number"] {
-    width: 30%;
-    font-size: 40px;
 	}
 	a {
 		font-size: 40px;
 	}
 	h4 {
 		font-size: 50px;
-	}
-	body {
-		padding-top: 15%;
-	}
-	h2 {
-		font-size: 2.5em;
-		padding-top: 3%;
-	}
-	form {
-		width: 90%;
-	}
-	form h2 {
-		font-size: 60px;
-	}
-	form label {
-		font-size: 40px;
-		width: 60%;
-	}
-	#topBar {
-		background-size: 9%;
-	}
-	#backButton {
-		height: 8%;
-		width: 22%;
-		font-size: 25px;
-	}
-	button {
-		width: 100%;
-		height: 70px;
-		background-color: #b10003;
-		color: white;
-		border-radius: 6px;
-		border: 0;
-		font-size: 40px;
-		padding: 6px;
-		font-family: openserif;
 	}
 }

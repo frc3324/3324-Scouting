@@ -12,83 +12,83 @@
       		<h2>Electrical Pit Scouting</h2>
       	</div>
       	<a href="/"><button id="backButton">< Back to Home</button></a>
-      	
+
 		<form method="POST" action="{{ url_for('submitted_electrical') }}">
 			<div>
-				<label>Team Number</label>
+				<label>Team Number</label> <br>
 				<input type="number" name="teamNumber" placeholder="3324" id="teamNumberInput" required>
 			</div>
 			<div>
-				<label>What is your basic team structue?</label>
+				<label>What is your basic team structue?</label> <br>
 				<input type="text" name="teamStructure">
 			</div>
 			<div>
-				<label>How many members are on your electrical team?</label>
+				<label>How many members are on your electrical team?</label> <br>
 				<input type="number" name="numberOfMembers" min="1" value="1">
 			</div>
 			<div>
-				<label>How do you manage your time?</label>
+				<label>How do you manage your time?</label> <br>
 				<input type="text" name="timeManagement">
 			</div>
 			<div>
-				<label>Do you have to wait for mechanical to make decisions before working on the board?</label>
+				<label>Do you have to wait for mechanical to make decisions before working on the board?</label> <br>
 				<span class="radioButtons"> <p>Yes <input type="radio" required name="waitsOnMechanical" value="1"> </p>
 				<p>No <input type="radio" required name="waitsOnMechanical" value="0"> </p> </span>
 			</div>
 			<div>
-				<label>What dictated the size and position of the electrical board?</label>
+				<label>What dictated the size and position of the electrical board?</label> <br>
 				<input type="text" name="dictatedSizePosition">
 			</div>
 			<div>
-				<label>How long did it take to finalize your design?</label>
+				<label>How long did it take to finalize your design?</label> <br>
 				<input type="text" name="timeToFinalize">
 			</div>
 			<div>
-				<label>Did you do anything different this year that you haven't done in the past? How did that work out?</label>
+				<label>Did you do anything different this year that you haven't done in the past? How did that work out?</label> <br>
 				<input type="text" name="anythingDifferent">
 			</div>
 			<div>
-				<label>Anything special about your board?</label>
+				<label>Anything special about your board?</label> <br>
 				<input type="text" name="anythingSpecial">
 			</div>
 			<div>
-				<label>How do you manage current to prevent brownouts?</label>
+				<label>How do you manage current to prevent brownouts?</label> <br>
 				<input type="text" name="brownoutPrevention">
 			</div>
 			<div>
-				<label>What does your electrical group do during preseason?</label>
+				<label>What does your electrical group do during preseason?</label> <br>
 				<input type="text" name="preseasonContent">
 			</div>
 			<div>
-				<label>Does the electrical group help with strategy and robot design decisions?</label>
+				<label>Does the electrical group help with strategy and robot design decisions?</label> <br>
 				<span class="radioButtons"> <p>Yes <input type="radio" required name="helpsWithStrategy" value="1"> </p>
 				<p>No <input type="radio" required name="helpsWithStrategy" value="0"> </p> </span>
 			</div>
 			<div>
-				<label>What made you choose to use/not use pneumatics?</label>
+				<label>What made you choose to use/not use pneumatics?</label> <br>
 				<input type="text" name="pneumatics">
 			</div>
 			<div>
-				<label>Do you have any encoders or sensors on your robot?</label>
-				<span class="radioButtons"> 
+				<label>Do you have any encoders or sensors on your robot?</label> <br>
+				<span class="radioButtons">
 				<p>Yes <input type="radio" required name="anyEncoders" value="1"> </p>
 				<p>No <input type="radio" required name="anyEncoders" value="0"> </p> </span>
 			</div>
 			<div>
-				<label>How did you use your encoders?</label>
+				<label>How did you use your encoders?</label> <br>
 				<input type="text" name="encodersUse">
 			</div>
 			<div>
-				<label>Do you use CAN or PWM?</label>
+				<label>Do you use CAN or PWM?</label> <br>
 				<span class="radioButtons"> <p>CAN <input type="radio" required name="canOrPwm" value="CAN"> </p>
 				<p>PWM <input type="radio" required name="canOrPwm" value="PWM"> </p> </span>
 			</div>
 			<div>
-				<label>How did you wire the LEDs on your robot?</label>
+				<label>How did you wire the LEDs on your robot?</label> <br>
 				<input type="text" name="wiredLEDs">
 			</div>
 			<div>
-				<label>Notes</label>
+				<label>Notes</label> <br>
 				<input type="text" name="other">
 			</div>
 			<button>Submit</button>
