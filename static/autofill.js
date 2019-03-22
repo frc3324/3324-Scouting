@@ -1,7 +1,7 @@
 var data;
 var element;
 
-function loadJSON(callback) {   
+function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
     var url = "/teamInformation.json";
@@ -13,14 +13,17 @@ function loadJSON(callback) {
     };
 
     xobj.open("GET", url, true);
-    xobj.send(); 
+    xobj.send();
  }
- 
+
 
 function autocomplete(inp, arr) {
   arr = arr.teams
   var currentFocus;
   inp.addEventListener("input", function(e) {
+      debugger;
+      document.getElementById("teamNumberInput").style.marginBottom = "0px";
+
       var a, b, i, val = this.value;
       var resultsNumber = 0
       closeAllLists();
@@ -54,22 +57,6 @@ function autocomplete(inp, arr) {
       }
 });
 
-  inp.addEventListener("keydown", function(e) {
-      var x = document.getElementById(this.id + "autocomplete-list");
-      if (x) x = x.getElementsByTagName("div");
-      if (e.keyCode == 40) {
-        currentFocus++;
-        addActive(x);
-      } else if (e.keyCode == 38) {
-        currentFocus--;
-        addActive(x);
-      } else if (e.keyCode == 13) {
-        e.preventDefault();
-        if (currentFocus > -1) {
-          if (x) x[currentFocus].click();
-        }
-      }
-  });
   function addActive(x) {
     if (!x) return false;
     removeActive(x);
@@ -90,10 +77,17 @@ function autocomplete(inp, arr) {
     }
   }
 }
+
+
 document.addEventListener("click", function (e) {
     closeAllLists(e.target);
 });
 }
+
+window.addEventListener("beforeUnload", function() {
+  closeAllLists();
+});
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
 element = document.getElementById("teamNumberInput");

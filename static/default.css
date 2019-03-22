@@ -25,6 +25,7 @@ body {
 	text-align: center;
 	padding-top: 90px;
 	font-family: openserif;
+	overflow-x: hidden;
 }
 
 #backButton {
@@ -56,13 +57,13 @@ h2 {
 		padding-top: 15%;
 	}
 	#backButton {
-		height: 22.5%;
+		height: 100%;
 		width: 22%;
 		font-size: 25px;
 	}
 	#topBar {
 		height: initial;
-		background-size: 9%;
+		background-size: 7%;
 	}
 	h2 {
 		padding-top: 0;

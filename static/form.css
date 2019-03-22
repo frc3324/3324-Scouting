@@ -70,6 +70,10 @@ input[type="text"], input[type="number"] {
   width: 40px;
 }
 
+textarea {
+  width: 100%;
+  height: 450px;
+}
 
 .radioButtons p {
 	font-family: roboto-thin;
@@ -87,6 +91,20 @@ form div br {
 
 
 @media only screen and (max-width: 1080px) {
+  #teamNumberInputautocomplete-list {
+    position: relative;
+    width: 80.8%;
+    margin: auto;
+    padding-bottom: 10px;
+  }
+  .autocompleteEmptyText {
+    font-size: 35px;
+  }
+  .autocomplete-items {
+    height: 60px;
+    vertical-align: middle;
+    font-size: 45px;
+  }
 	form div br {
 		display: inherit;
 	}
@@ -105,7 +123,13 @@ form div br {
     font-size: 40px;
     margin-bottom: 50px;
     text-align: center;
+    height: 70px;
 	}
+  textarea {
+    width: 80%;
+    font-size: 35px;
+    height: 900px
+  }
   button, input[type="text"], input[type="number"] {
     float: none;
   }

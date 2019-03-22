@@ -96,7 +96,7 @@ def create_programming_csv():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     data = cursor.execute("SELECT * FROM programming")
-    re.sub(r'[^\x00-\x7F]', r'', data);
+    re.sub(r'[^\x00-\x7F]', r'', str(data));
     with open('programming.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(('Github?'))
@@ -107,7 +107,7 @@ def create_electrical_csv():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     data = cursor.execute("SELECT * FROM electrical")
-    re.sub(r'[^\x00-\x7F]', r'', data);
+    re.sub(r'[^\x00-\x7F]', r'', str(data));
     with open('electrical.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(('Good Wires?'))
@@ -117,7 +117,7 @@ def create_mechanical_csv():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     data = cursor.execute("SELECT * FROM mechanical")
-    re.sub(r'[^\x00-\x7F]', r'', data);
+    re.sub(r'[^\x00-\x7F]', r'', str(data));
     with open('mechanical.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(('Notes'))
@@ -146,6 +146,7 @@ def create_csv():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     data = cursor.execute("SELECT * FROM scouting")
+    re.sub(r'[^\x00-\x7F]', r'', str(data));
     with open('output.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(('Team Number', 'Match Number', 'Starting Point', 'Cargo High', 'Cargo Mid', 'Cargo Low', 'Hatch High', 'Hatch Mid', 'Hatch Low', 'Other Side', 'Climb', 'Other'))
