@@ -1,5 +1,11 @@
-@font-face {font-family: openserif; src: url("font.ttf")}
-@font-face {font-family: roboto-thin; src: url("font-thin.ttf")}
+@font-face {font-family: openserif; src: url("fonts/openserif.ttf")}
+@font-face {font-family: roboto-thin; src: url("fonts/roboto-thin.ttf")}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 form {
     width: 420px;
@@ -89,6 +95,52 @@ form div br {
 	display: none;
 }
 
+.upButton, .downButton {
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: #b10003;
+    padding: 0px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.scoringNumber {
+    font-size: 28px;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.scoringQuestions div {
+  width: 10%;
+  text-align: center;
+  display: inline-block;
+}
+
+.scoringQuestions div h4{
+  margin: 0px;
+}
+
+.scoringQuestions div + div {
+    margin-left: 30px;
+}
+
+.scoringQuestions div input[type="number"] {
+  font-family: openserif;
+  border: none;
+  -moz-appearance: textfield;
+  pointer-events: none;
+  text-align: center;
+  margin: 0;
+}
+
+button:disabled {
+    color: #ff9494;
+    cursor: default;
+}
+
+
 
 @media only screen and (max-width: 1080px) {
   #teamNumberInputautocomplete-list {
@@ -155,4 +207,10 @@ form div br {
 		padding: 6px;
 		font-family: openserif;
 	}
+  .upButton, .downButton {
+    font-size: 80px;
+  }
+  .scoringQuestions div + div {
+    margin-left: 20%;
+  }
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Programming Scouting Form</title>
+      	<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/form.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/autofill.js') }}"></script>
+	</head>
+	<body>
+		<div id="topBar">
+			<a href="/"><button id="backButton">< Back to Home</button></a>
+			<h2>Programming Pit Scouting</h2>
+    </div>
+		<form method="POST" action="submit?form=programming">
+			<div>
+				<label>Team Number</label>
+				<input type="number" name="team_number" placeholder="3324" id="teamNumberInput" required>
+			</div>
+			<div>
+				<label>Do you use github?</label>
+				<span class="radioButtons"> <p>Yes <input type="radio" required name="uses_github" value="1"> </p>
+				<p>No <input type="radio" required name="uses_github" value="0"> </p> </span>
+			</div>
+			<div>
+				<label>How many people are on your programming team?</label>
+				<input type="number" name="prog_size" value="1" min="1">
+			</div>
+			<div>
+				<label>What programming language do you primarily use?</label>
+				<input type="text" name="program_lang" placeholder="Language">
+			</div>
+			<div>
+				<label>Other Notes</label>
+				<input type="text" name="other" placeholder="None">
+			</div>
+			<button>Submit</button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Data Viewing Portal</title>
+    <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/raw_data.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/data_portal.css')}}">
+    <script>
+      window.data = {{ allData | safe }}
+      window.constants = {{ constants | safe }}
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/rawData.js') }}"></script>
+
+  </head>
+  <body>
+    <div id="topBar">
+      <a href="/"><button id="backButton">< Back to Home</button></a>
+      <h2>Raw Data</h2>
+      <div id="tabs">
+        <a href="raw_data"><button class="tabButtons">Raw Data</button></a>
+        <a href="calculated_team_averages"><button class="tabButtons">Calculated Team Averages</button></a>
+        <a href="exports"><button class="tabButtons" href="exports.html">Export</button></a>
+      </div>
+    </div>
+
+    <div class="dataTable">
+    <h3>Match Data</h3>
+    <button class="icon collapseButton" onclick="collapse(this)">&#xe5c7;</button>
+    <div class="tableContainer">
+    <table id="matchTable">
+    </table>
+    </div>
+    </div>
+
+    <div class="dataTable">
+    <h3>Mechanical Pit Data</h3>
+    <button class="icon collapseButton" onclick="collapse(this)">&#xe5c7;</button>
+    <div class="tableContainer">
+    <table id="mechanicalTable">
+    </table>
+    </div>
+    </div>
+
+    <div class="dataTable">
+    <h3>Electrical Pit Data</h3>
+    <button class="icon collapseButton" onclick="collapse(this)">&#xe5c7;</button>
+    <div class="tableContainer">
+    <table id="electricalTable">
+    </table>
+    </div>
+    </div>
+
+    <div class="dataTable">
+    <h3>Programming Pit Data</h3>
+    <button class="icon collapseButton" onclick="collapse(this)">&#xe5c7;</button>
+    <div class="tableContainer">
+    <table id="programmingTable">
+    </table>
+    </div>
+  </div>
+
+  </body>
+</html>

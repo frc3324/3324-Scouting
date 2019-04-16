@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mechanical Scouting Form</title>
+      	<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/form.css')}}">
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/autofill.js') }}"></script>
+	</head>
+	<body>
+		<div id="topBar">
+			<a href="/"><button id="backButton">< Back to Home</button></a>
+
+      		<h2>Mechanical Pit Scouting</h2>
+      	</div>
+		<form method="POST" action="submit?form=mechanical" id="form">
+			<div>
+          		<label for="team_number">Team Number</label>
+          		<input type="number" name="teamNumber" id="teamNumberInput" placeholder="3324" required>
+    	</div>
+			<div>
+				<label>What is their Drivetrain? (Wheels, speed, etc.)</label>
+				<textarea form="form" name="drivetrain" placeholder="Enter drivetrain information..."></textarea>
+			</div>
+			<div>
+				<label>What is their Climber?</label>
+				<textarea form="form" name="climber" placeholder="Enter climber information..."></textarea>
+			</div>
+			<div>
+				<label>What are their Mechanisms?</label>
+				<textarea form="form" name="mechanisms" placeholder="Enter mechanism information..."></textarea>
+			</div>
+			<div>
+				<label>What is the reliability/efficiency of the robot?</label>
+				<textarea form="form" name="reliability" placeholder="Enter reliability information..."></textarea>
+			</div>
+			<div>
+				<label>Other Notes</label>
+				<textarea form="form" name="notes" placeholder="Enter other notes..."></textarea>
+			</div>
+			<button>Submit</button>
+		</form>
+	</body>
+</html>

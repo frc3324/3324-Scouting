@@ -1,0 +1,70 @@
+@font-face {font-family: materialicons; src: url("fonts/materialicons.ttf")}
+
+table {
+  border-collapse: collapse;
+  width: initial;
+  margin: auto;
+  background-color: white;
+}
+
+td {
+  border: 1px solid black;
+  width: 30px;
+  height: 40px;
+  padding: 6px;
+}
+
+th {
+  border: 1px solid black;
+  padding: 10px;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  color: white;
+}
+
+.otherNotes {
+  width: 280px;
+  overflow-y: scroll;
+  height: 40px;
+  font-size: 12px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.dataTable {
+  background-color: #ededed;
+  border-radius: 16px;
+  padding: 12px;
+  border: 4px solid #5d5d5d;
+  position: relative;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.collapseButton {
+  background: none;
+  color: #5d5d5d;
+  border: none;
+  font-size: 24px;
+  position: absolute;
+  right: 3px;
+  top: 7px;
+  cursor: pointer;
+}
+
+.noDataIcon {
+  font-family: materialicons;
+  margin: 0px;
+  font-size: 30px;
+  color: #b10003;}
+
+.selectedRow {
+  background-color: #ff9494;
+}
+
+h3 {
+  margin-top: 0px;
+}

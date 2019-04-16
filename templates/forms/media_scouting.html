@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Fundraising Scouting Form</title>
+		<title>Media Scouting Form</title>
       	<link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
-      <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
-      <link rel="stylesheet" href="{{ url_for('static',filename = 'form.css')}}">
-      <script type="text/javascript" src="{{ url_for('static', filename = 'autofill.js') }}"></script>
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/form.css')}}">
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/autofill.js') }}"></script>
 	</head>
 	<body>
 		<div id="topBar">
 			<a href="/"><button id="backButton">< Back to Home</button></a>
 
-      		<h2>Fundraising Pit Scouting</h2>
+      		<h2>Media Pit Scouting</h2>
       	</div>
-		<form method="POST" action="{{ url_for('submitted_fundraising') }}" id="form">
+		<form method="POST" action="submit?form=media" id="form">
 			<div>
           		<label for="team_number">Team Number</label>
           		<input type="number" name="teamNumber" id="teamNumberInput" placeholder="3324" required>

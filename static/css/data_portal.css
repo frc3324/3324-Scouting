@@ -1,0 +1,27 @@
+body {
+  padding-top: 9%;
+}
+
+.tabButtons {
+    width: 33.3333333333333333%;
+    float: left;
+    background-color: #87120c;
+    height: 50px;
+    font-size: 20px;
+    font-family: openserif;
+    color: white;
+    cursor: pointer;
+    border: 1px solid #731313;
+    border-top: none;
+}
+
+.tabButtons:hover {
+    background-color: #6d1c17;
+    transition-duration: 0.15s;
+}
+
+#tabs {
+  width: 100%;
+  position: absolute;
+  top: 70px;
+}

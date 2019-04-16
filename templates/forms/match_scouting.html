@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Match Scouting Form</title>
+      <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/form.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
+
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/autofill.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/matchScouting.js') }}"></script>
+    </head>
+    <body>
+      <div id="topBar">
+        <a href="/"><button id="backButton">< Back to Home</button></a>
+        <h2>Match Scouting</h2>
+      </div>
+
+      <form method="POST" action="submit?form=match">
+        <div>
+          <label for="team_number">Team Number</label>
+          <input type="number" name="team_number" id="teamNumberInput" placeholder="3324" required min="0" max="10000">
+        </div>
+        <div>
+          <label for="match_number">Match Number</label>
+          <input type="number" name="match_number" required value="1" min="1">
+        </div>
+        <div>
+          <label for="starting_level">What level did this team start at</label>
+          <input type="number" name="starting_level" id="starting_level" value="1" min="1" max="2">
+        </div>
+
+        <hr>
+        <h4>Cargo Scored</h4>
+        <div class="scoringQuestions">
+          <div>
+            <h4>Low</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="cargo_low" class="scoringNumber" value="0" min="0" max="12" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+          <div>
+            <h4>Mid</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="cargo_mid" class="scoringNumber" value="0" min="0" max="4" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+          <div>
+            <h4>High</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="cargo_high" class="scoringNumber" value="0" min="0" max="4" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+        </div>
+        <hr>
+
+
+        <h4>Hatches Scored</h4>
+        <div class="scoringQuestions">
+          <div>
+            <h4>Low</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="hatch_low" class="scoringNumber" value="0" min="0" max="12" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+          <div>
+            <h4>Mid</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="hatch_mid" class="scoringNumber" value="0" min="0" max="4" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+          <div>
+            <h4>High</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="hatch_high" class="scoringNumber" value="0" min="0" max="4" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+        </div>
+        <hr>
+
+        <div>
+          <label for="other_side">Did they go on the other side?</label>
+          <span class="radioButtons"> <p>Yes <input type="radio" required name="other_side" value="1"> </p>
+          <p>No <input type="radio" required name="other_side" value="0"> </p></span>
+        </div>
+        <div>
+          <label for="ending_level">Did this team attempt a climb?</label>
+          <span class="radioButtons"> <p>Yes <input type="radio" required name="attempted_climb" value="1"> </p>
+          <p>No <input type="radio" required name="attempted_climb" value="0"> </p></span>
+        </div>
+        <div>
+          <label for="ending_level">What level did this team end at/climb to?</label>
+          <input type="number" name="ending_level" id="ending_level" value="0" min="0" max="3">
+        </div>
+        <div>
+          <label for="notes">Other Notes (Buddy climb, etc)</label>
+          <input type="text" name="notes" id="notes">
+        </div>
+
+        <div>
+          <button>Submit</button>
+        </div>
+      </form>
+    </body>
+</html>

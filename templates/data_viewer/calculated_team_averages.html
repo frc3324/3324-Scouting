@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3324 Metrobots Scouting Data</title>
+    <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/raw_data.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/data_portal.css')}}">
+
+    <script>
+      window.data = {{ allData | safe }}
+      window.constants = {{ constants | safe }}
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/calculatedTeamAverages.js') }}"></script>
+  </head>
+  <body>
+    <div id="topBar">
+      <a href="/"><button id="backButton">< Back to Home</button></a>
+      <h2>Calculated Team Averages</h2>
+      <div id="tabs">
+        <a href="raw_data"><button class="tabButtons">Raw Data</button></a>
+        <a href="calculated_team_averages"><button class="tabButtons">Calculated Team Averages</button></a>
+        <a href="exports"><button class="tabButtons" href="exports.html">Export</button></a>
+      </div>
+    </div>
+
+      <div class="tableContainer">
+        <table id="averagesTable"></table>
+      </div>
+  </body>
+</html>

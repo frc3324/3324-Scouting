@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3324 Metrobots Scouting Hub</title>
+    <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/data_portal.css')}}">
+  </head>
+  <body>
+    <div id="topBar">
+      <a href="/"><button id="backButton">< Back to Home</button></a>
+      <h2>Exports</h2>
+      <div id="tabs">
+        <a href="raw_data"><button class="tabButtons">Raw Data</button></a>
+        <a href="calculated_team_averages"><button class="tabButtons">Calculated Team Averages</button></a>
+        <a href="exports"><button class="tabButtons" href="exports.html">Export</button></a>
+      </div>
+    </div>
+    <h4>CSV Exports</h4>
+    <a href="match_data">Export Match Scouting Data</a> <br> <br>
+    <a href="mechanical_data">Export Mechanical Pit Data</a> <br> <br>
+    <a href="electrical_data">Export Electrical Pit Data</a> <br> <br>
+    <a href="programming_data">Export Programming Pit Data</a>
+  </body>
+</html>

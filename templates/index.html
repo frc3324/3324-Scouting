@@ -4,8 +4,7 @@
       <meta charset="utf-8">
       <title>3324 Metrobots Scouting Hub</title>
       <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
-      <link rel="stylesheet" href="{{ url_for('static',filename = 'index.css')}}">
-      <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
+      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
     </head>
     <body>
       <p>
@@ -13,24 +12,18 @@
             <h2>Scouting Links</h2>
            </div>
 
-           <a href="match_scouting">Match Scouting</a> <br> <br>
+           <a href="form?type=match">Match Scouting</a> <br> <br>
            <hr>
            <h4>Engineering Pit Scouting Forms</h4>
-           <a href="mechanical_scouting">Mechanical Pit Form</a> <br> <br>
-           <a href="electrical_scouting">Electrical Pit Form</a> <br> <br>
-           <a href="programming_scouting">Programming Pit Form</a> <br> <br>
+           <a href="form?type=mechanical">Mechanical Pit Form</a> <br> <br>
+           <a href="form?type=electrical">Electrical Pit Form</a> <br> <br>
+           <a href="form?type=programming">Programming Pit Form</a> <br> <br>
 
            <h4>BAM Pit Scouting Forms</h4>
-           <a href="media_scouting">Media Pit Form</a> <br> <br>
-           <a href="fundraising_scouting">Fundraising Pit Form</a> <br> <br>
+           <a href="form?type=media">Media Pit Form</a> <br> <br>
+           <a href="form?type=fundraising">Fundraising Pit Form</a> <br> <br>
            <hr>
-           <h4>CSV Exports</h4>
-           <a href="match_data">Export Match Scouting Data</a> <br> <br>
-           <a href="mechanical_data">Export Mechanical Pit Data</a> <br> <br>
-           <a href="electrical_data">Export Electrical Pit Data</a> <br> <br>
-           <a href="programming_data">Export Programming Pit Data</a> <br> <br>
-           <a href="electrical_data">Export Media Pit Data</a> <br> <br>
-           <a href="electrical_data">Export Fundraising Pit Data</a> <br> <br>
+           <a href="raw_data"><h4>Data Viewing Portal</h4></a>
       </p>
     </body>
 </html>

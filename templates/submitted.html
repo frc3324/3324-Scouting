@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <title>Form Submitted</title>
       <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
-        <link rel="stylesheet" href="{{ url_for('static',filename = 'default.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
     </head>
     <body>
       <p>
@@ -12,18 +12,14 @@
             <a href="/"><button id="backButton">< Back to Home</button></a>
             <h2>Form Submitted</h2> <br>
           </div>
-           <a href="match_scouting">Return to Match Scouting</a> <br> <br>
-           <a href="mechanical_scouting">Return to Mechanical Pit Scouting</a> <br> <br>
-           <a href="electrical_scouting">Return to Electrical Pit Scouting</a> <br> <br>
-           <a href="programming_scouting">Return to Programming Pit Scouting</a> <br> <br>
-           <a href="media_scouting">Return to Media Pit Scouting</a> <br> <br>
-           <a href="fundraising_scouting">Return to Fundraising Pit Scouting</a> <br> <br>
+           <a href="form?type=match">Return to Match Scouting</a> <br> <br>
+           <a href="form?type=mechanical">Return to Mechanical Pit Scouting</a> <br> <br>
+           <a href="form?type=electrical">Return to Electrical Pit Scouting</a> <br> <br>
+           <a href="form?type=programming">Return to Programming Pit Scouting</a> <br> <br>
+           <a href="form?type=media">Return to Media Pit Scouting</a> <br> <br>
+           <a href="form?type=fundraising">Return to Fundraising Pit Scouting</a> <br> <br>
            <hr>
-           <h4>CSV Exports</h4>
-           <a href="match_data">Export Match Scouting Data</a> <br> <br>
-           <a href="mechanical_data">Export Mechanical Pit Data</a> <br> <br>
-           <a href="electrical_data">Export Electrical Pit Data</a> <br> <br>
-           <a href="programming_data">Export Programming Pit Data</a>
+           <a href="raw_data"><h4>Data Viewing Portal</h4></a>
       </p>
     </body>
 </html>

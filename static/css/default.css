@@ -1,5 +1,6 @@
-@font-face {font-family: openserif; src: url("font.ttf")}
-@font-face {font-family: roboto-thin; src: url("font-thin.ttf")}
+@font-face {font-family: openserif; src: url("fonts/openserif.ttf")}
+@font-face {font-family: roboto-thin; src: url("fonts/roboto-thin.ttf")}
+@font-face {font-family: materialicons; src: url("fonts/materialicons.ttf")}
 
 h2 {
 	width: 50%;
@@ -50,6 +51,10 @@ h2 {
 
 #backButton:hover {
 	background-color: #0003;
+}
+
+.icon {
+	font-family: materialicons;
 }
 
 @media only screen and (max-width: 1080px) {

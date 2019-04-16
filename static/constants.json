@@ -1,0 +1,48 @@
+{
+  "tables": ["match", "mechanical", "electrical", "programming", "fundraising", "media"],
+  "questions": {
+    "match": ["Team Number", "Match Number", "Starting Point", "Cargo High",
+              "Cargo Mid", "Cargo Low", "Hatch High", "Hatch Mid", "Hatch Low",
+               "Defense?", "Attempted Climb", "Climb", "Other"],
+    "mechanical": ["Team Number", "Other"],
+    "electrical": ["Team Number", "Basic Team Structure", "Electrical Members",
+                   "Time Management", "Waits of Mechanical?", "What dictated the size and position?",
+                   "How long did it take to finalize?", "Anything Different?", "Anything Special?",
+                   "Brownout Prevention?", "Preseason Activities?", "Electrical Strategy?", "Pneumatics?",
+                   "Any Encoders/Sensors?", "Encoder Use?", "CAN or PWM", "How were LEDs wired?", "Other"],
+    "programming": ["Team Number", "Uses Github?", "People on Team", "Language", "Other"]
+  },
+  "questionIndexes": {
+    "match": ["team_number", "match_number", "starting_level",
+              "cargo_high", "cargo_mid", "cargo_low",
+              "hatch_high", "hatch_mid", "hatch_low",
+              "other_side", "attempted_climb", "ending_level", "notes"],
+    "mechanical": ["team_number", "drivetrain_information", "climber_information",
+                   "mechanisms_information", "reliability", "notes"],
+    "electrical": ["team_number", "team_structure", "number_of_members",
+                   "time_management", "waits_on_mechanical", "dictated_size_position",
+                   "time_to_finalize", "anything_different", "anything_special",
+                   "brownout_prevention", "preseason_content", "helps_with_strategy", "pneumatics",
+                   "any_encoders", "encoders_use", "can_pwm", "wired_LEDs", "other"],
+     "programming": ["team_number", "uses_github", "prog_size", "program_lang", "other"],
+     "fundraising": ["team_number", "other"],
+     "media": ["team_number", "other"]
+  },
+
+
+  "dataCalculationHeaders": ["Team Number", "Matches Observed", "Avg Start Point",	"Avg Cargo High", "Avg Cargo Mid",
+      "Avg Cargo Low",	"Least Cargo Cycles",	"Most Cargo Cycles",
+      "Avg Cargo Placed", "STD Dev Cargo", "Avg Hatch High", "Avg Hatch Mid",
+      "Avg Hatch Low",	"Least Hatch Cycles", "Most Hatch Cycles",
+      "Avg Hatch Placed", "STD Dev Hatch", "Least Cycles",
+      "Most Cycles", "Average Cycles",
+      "Std Dev Cycles", "Best Climb",	"% Best CLimb"],
+  "averagesIndexes": ["teamNumber", "matches_count", "avg_start_point",	"avg_cargo_high",
+                      "avg_cargo_mid", "avg_cargo_low",	"least_cargo_cycles",
+                      "most_cargo_cycles", "avg_cargo_placed", "std_dev_cargo",
+                      "avg_hatch_high",	"avg_hatch_mid", "avg_hatch_low",
+                      "least_hatch_cycles", "most_hatch_cycles", "avg_hatch_placed",
+                      "std_dev_hatch", "least_cycles", "most_cycles",
+                      "average_cycles", "std_dev_cycles", "best_climb",
+                      "percent_best_climb"]
+}

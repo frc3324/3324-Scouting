@@ -1,153 +1,49 @@
 import csv
 import sqlite3
-import re;
+import re
+import json
 
-def create_table():
+with open('./static/constants.json') as c:
+    print(c)
+    constants = json.load(c)
+
+
+def create_table(table):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
+    executeString = '''CREATE TABLE ''' + str(table) + " " + str(tuple(constants["questionIndexes"][table])).replace("u'", "'")
     try:
-        cursor.execute('''CREATE TABLE scouting (team_number int , matchNumber int ,  starting_level int , cargoHigh int, cargoMid int, cargoLow int, hatchHigh int, hatchMid int, hatchLow int, otherSide int, climb int, other text)''')
+        cursor.execute('''CREATE TABLE ''' + str(table) + " " + str(tuple(constants["questionIndexes"][table])).replace("u'", "'"))
     except Exception as e: print(e)
 
-def submit(team_number, matchNumber, starting_level, cargoHigh, cargoMid, cargoLow, hatchHigh, hatchMid, hatchLow, otherSide, climb, other):
+def submit_form(data, table):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    scouting_info = (int(team_number), int(matchNumber), int(starting_level), int(cargoHigh), int(cargoMid), int(cargoLow), int(hatchHigh), int(hatchMid), int(hatchLow), int(otherSide), int(climb), other)
-    cursor.execute("INSERT INTO scouting VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", scouting_info)
+    sqlString = "INSERT INTO " + table + " VALUES "
+    dataString = ""
+    for x in range (len(data)):
+        if (x == 0):
+            sqlString += "(?"
+        else:
+            sqlString += ",?"
+    sqlString += ")"
+    cursor.execute(sqlString, tuple(data))
     conn.commit()
 
-def create_mechanical_table():
+def getData():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    try:
-        cursor.execute('''CREATE TABLE mechanical (teamNumber int, notes text) ''')
-    except Exception as e: print(e)
+    data = {}
+    for item in constants["tables"]:
+        cursor.execute("SELECT * FROM " + item)
+        data[item] = json.dumps(cursor.fetchall())
+    return data
 
-def submit_mechanical(teamNumber, notes):
+def create_csv(table):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    mechanical_info = (teamNumber, notes);
-    cursor.execute("INSERT INTO mechanical VALUES (?, ?)", (mechanical_info))
-    conn.commit()
-
-
-def create_electrical_table():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    try:
-        cursor.execute('''CREATE TABLE electrical (teamNumber int, teamStructure text, numberOfMembers int, timeManagement text, waitsOnMechanical int, dictatedSizePosition text, timeToFinalize text, anythingDifferent text, anythingSpecial text, brownoutPrevention text, preseasonContent text, helpsWithStrategy int, pneumatics text, anyEncoders int, encodersUse text, canOrPwm text, wiredLEDs text, other text) ''')
-    except Exception as e: print(e)
-
-def submit_electrical(teamNumber, teamStructure, numberOfMembers, timeManagement, waitsOnMechanical, dictatedSizePosition, timeToFinalize, anythingDifferent, anythingSpecial, brownoutPrevention, preseasonContent, helpsWithStrategy, pneumatics, anyEncoders, encodersUse, canOrPwm, wiredLEDs, other):
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    electrical_info = (int(teamNumber), teamStructure, int(numberOfMembers), timeManagement, int(waitsOnMechanical), dictatedSizePosition, timeToFinalize, anythingDifferent, anythingSpecial, brownoutPrevention, preseasonContent, int(helpsWithStrategy), pneumatics, int(anyEncoders), encodersUse, canOrPwm, wiredLEDs, other);
-    cursor.execute("INSERT INTO electrical VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (electrical_info))
-    conn.commit()
-
-
-def create_programming_table():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    try:
-        cursor.execute('''CREATE TABLE programming (teamNumber int, usesGithub int, progSize int, programLang text, other text) ''')
-    except Exception as e: print(e)
-
-def submit_programming(teamNumber, usesGithub, progSize, programLang, other):
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    programming_info = (int(teamNumber), int(usesGithub), int(progSize), programLang, other)
-    cursor.execute("INSERT INTO programming VALUES (?,?,?,?,?)", (programming_info))
-    conn.commit()
-
-#BAM Stuff
-
-def create_media_table():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    try:
-        cursor.execute('''CREATE TABLE media (teamNumber int, notes text) ''')
-    except Exception as e: print(e)
-
-def submit_media(teamNumber, notes):
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    media_info = (teamNumber, notes);
-    cursor.execute("INSERT INTO media VALUES (?, ?)", (media_info))
-    conn.commit()
-
-def create_fundraising_table():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    try:
-        cursor.execute('''CREATE TABLE fundraising (teamNumber int, notes text) ''')
-    except Exception as e: print(e)
-
-def submit_fundraising(teamNumber, notes):
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    fundraising_info = (teamNumber, notes);
-    cursor.execute("INSERT INTO fundraising VALUES (?, ?)", (fundraising_info))
-    conn.commit()
-
-#CSV Exports
-
-def create_programming_csv():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    data = cursor.execute("SELECT * FROM programming")
-    re.sub(r'[^\x00-\x7F]', r'', str(data));
-    with open('programming.csv', 'w') as f:
+    data = cursor.execute("SELECT * FROM " + table)
+    with open(table + '.csv', 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(('Github?'))
-        writer.writerows(data)
-
-
-def create_electrical_csv():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    data = cursor.execute("SELECT * FROM electrical")
-    re.sub(r'[^\x00-\x7F]', r'', str(data));
-    with open('electrical.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow(('Good Wires?'))
-        writer.writerows(data)
-
-def create_mechanical_csv():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    data = cursor.execute("SELECT * FROM mechanical")
-    re.sub(r'[^\x00-\x7F]', r'', str(data));
-    with open('mechanical.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow(('Notes'))
-        writer.writerows(data)
-
-def create_fundraising_csv():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    data = cursor.execute("SELECT * FROM fundraising")
-    with open('fundraising.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow(('Notes'))
-        writer.writerows(data)
-
-def create_media_csv():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    data = cursor.execute("SELECT * FROM media")
-    with open('media.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow(('Notes'))
-        writer.writerows(data)
-
-
-def create_csv():
-    conn = sqlite3.connect('scouting.db')
-    cursor = conn.cursor()
-    data = cursor.execute("SELECT * FROM scouting")
-    re.sub(r'[^\x00-\x7F]', r'', str(data));
-    with open('output.csv', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow(('Team Number', 'Match Number', 'Starting Point', 'Cargo High', 'Cargo Mid', 'Cargo Low', 'Hatch High', 'Hatch Mid', 'Hatch Low', 'Other Side', 'Climb', 'Other'))
+        writer.writerow(constants["questions"][table])
         writer.writerows(data)
