@@ -11,7 +11,7 @@ import json
 #        event_key = sys.argv[1]
 #except:
 #event_key = "2019paca"
-#system("python3 getJson.py " + event_key)
+system("python3 getJson.py " + "2019tes")
 app = Flask(__name__)
 
 with open('./static/constants.json') as f:

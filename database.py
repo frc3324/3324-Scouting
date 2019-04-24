@@ -27,6 +27,7 @@ def submit_form(data, table):
         else:
             sqlString += ",?"
     sqlString += ")"
+    print "RIGHT HERE YOU FUCKING DUMBASS LOLAEGOINAOEIGNOAEGNOIAEGN: " + str(data);
     cursor.execute(sqlString, tuple(data))
     conn.commit()
 
