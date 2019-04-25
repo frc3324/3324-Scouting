@@ -9,6 +9,9 @@ for (var t = 0; t < constants.tables.length; t++) {
         if (i == -1) {
           var item = document.createElement("th");
           item.innerHTML = window.constants.questions[tableVar][j];
+          item.id = j;
+          item.addEventListener('click', function(){sort(this);});
+          item.style.cursor = "pointer";
           row.style.backgroundColor = "#b10003"
           row.appendChild(item);
         } else {
@@ -64,6 +67,43 @@ function selectRow(ele) {
       ele.classList.add("selectedRow");
     } else {
       ele.parentNode.children[i].classList.remove("selectedRow");
+    }
+  }
+}
+
+function sort(ele) {
+  debugger;
+  var i;
+  var col = ele.id
+  var switching = true;
+  var dir = 1;
+  var makeSwitch = false;
+  var switchCount = 0;
+  var table = document.getElementsByTagName('table')[0]
+  while (switching) {
+    switching = false;
+    for (i = 1; i < (table.rows.length-1); i++) {
+      if (dir == 1) {
+        if (parseInt(table.rows[i].children[col].innerHTML) < parseInt(table.rows[i+1].children[col].innerHTML)) {
+          makeSwitch = true;
+          break;
+        }
+      } else if (dir == 0) {
+        if (parseInt(table.rows[i].children[col].innerHTML) > parseInt(table.rows[i+1].children[col].innerHTML)) {
+          makeSwitch = true;
+          break;
+        }
+      }
+    }
+    if (makeSwitch) {
+      table.rows[i].parentNode.insertBefore(table.rows[i + 1], table.rows[i]);
+      switching = true;
+      switchCount++;
+    } else {
+      if (switchCount == 0 && dir == 1) {
+        dir = 0;
+        switching = true;
+      }
     }
   }
 }

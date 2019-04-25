@@ -1,4 +1,4 @@
-import csv
+import unicodecsv as csv
 import sqlite3
 import re
 import json
@@ -44,6 +44,6 @@ def create_csv(table):
     cursor = conn.cursor()
     data = cursor.execute("SELECT * FROM " + table)
     with open(table + '.csv', 'w') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, encoding="utf-8")
         writer.writerow(constants["questions"][table])
         writer.writerows(data)
