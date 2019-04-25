@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     teamList[j] = JSON.parse(data.match)[j][0]
   }
   teamList = teamList.filter(onlyUnique);
-  debugger;
   if (teamList.length > 0) {
     var least = 0;
     var most = 0;
@@ -19,7 +18,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (i == -1) {
           var item = document.createElement("th");
           item.innerHTML = constants.dataCalculationHeaders[j];
-          row.style.backgroundColor = "#b10003"
+          item.id = j;
+          item.addEventListener('click', function(){sort(this);});
+          row.style.backgroundColor = "#b10003";
+          row.style.cursor = "pointer";
         } else {
           var item = document.createElement('td');
           switch (j) {
@@ -114,7 +116,6 @@ function arraySum(array) {
 }
 
 function stdDev(array) {
-  debugger;
   var mean = arraySum(array)/array.length;
   var devArray = []
   array.forEach(function(item) {
@@ -135,5 +136,43 @@ function getColData(array, colArray) {
       colData.push(parseFloat(arraySum(array[c].slice(Math.min(...colArray), Math.max(...colArray)+1))))
     }
     return colData;
+  }
+}
+
+function sort(ele) {
+  debugger;
+  var i;
+  var col = ele.id
+  var switching = true;
+  var dir = 1;
+  var makeSwitch = false;
+  var switchCount = 0;
+  var table = document.getElementsByTagName('table')[0]
+  while (switching) {
+    switching = false;
+    for (i = 1; i < (table.rows.length-1); i++) {
+      if (dir == 1) {
+        if (parseInt(table.rows[i].children[col].innerHTML) < parseInt(table.rows[i+1].children[col].innerHTML)) {
+          makeSwitch = true;
+          break;
+        }
+      } else if (dir == 0) {
+        if (parseInt(table.rows[i].children[col].innerHTML) > parseInt(table.rows[i+1].children[col].innerHTML)) {
+          makeSwitch = true;
+          break;
+        }
+      }
+
+    }
+    if (makeSwitch) {
+      table.rows[i].parentNode.insertBefore(table.rows[i + 1], table.rows[i]);
+      switching = true;
+      switchCount++;
+    } else {
+      if (switchCount == 0 && dir == 1) {
+        dir = 0;
+        switching = true;
+      }
+    }
   }
 }

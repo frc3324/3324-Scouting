@@ -26,7 +26,7 @@ def index():
 
 @app.route('/raw_data', methods=['GET', 'POST'])
 def raw_data():
-    data = database.getData();
+    data = database.getData()
     return render_template('data_viewer/raw_data.html', allData=json.dumps(data), constants=json.dumps(constants))
 
 @app.route('/exports', methods=['GET', 'POST'])
@@ -35,7 +35,7 @@ def exports():
 
 @app.route('/calculated_team_averages', methods=['GET', 'POST'])
 def calculated_team_averages():
-    data = database.getData();
+    data = database.getData()
     return render_template('data_viewer/calculated_team_averages.html', allData=json.dumps(data), constants=json.dumps(constants))
 
 @app.route('/form', methods=['GET', 'POST'])
@@ -44,7 +44,7 @@ def return_form():
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit_form():
-    answerList = [];
+    answerList = []
     for x in range(len(constants["questions"][request.args.get('form')])):
         answerList.append(request.form[constants["questionIndexes"][request.args.get('form')][x]])
     database.submit_form(answerList, request.args.get('form'))
@@ -53,7 +53,7 @@ def submit_form():
 @app.route('/csv_export', methods=['GET', 'POST'])
 def csv_export():
     database.create_csv(request.args.get('table'))
-    return send_file(request.args.get('table') + '.csv')
+    return send_file(request.args.get('table') + '.csv', as_attachment=True)
 
 @app.route('/icon.png', methods=['GET', 'POST'])
 def icon():
