@@ -1,5 +1,7 @@
 = 3324 Scouting App
+
 This is the github page for 3324's scouting app, we use an https://npc.rewiretech.com/app/olin?draft=o7IDVfcGTwVHv6SrSOBEorBgeok1[acommpanying google sheet]. 
+
 == Running the site
 
 To run the site (on port 8080) you need a couple dependencies. Firstly you need python2 and pip2. Next you'll need to `pip install flask` and `pip install unicodecsv` (for unicode support). 
