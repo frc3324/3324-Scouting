@@ -1,0 +1,13 @@
+= 3324 Scouting App
+This is the github page for 3324's scouting app, we use an https://npc.rewiretech.com/app/olin?draft=o7IDVfcGTwVHv6SrSOBEorBgeok1[acommpanying google sheet]. 
+== Running the site
+
+To run the site (on port 8080) you need a couple dependencies. Firstly you need python2 and pip2. Next you'll need to `pip install flask` and `pip install unicodecsv` (for unicode support). 
+
+Then you can run `python server.py` to run the server on port 8080. To go to the site go on a browser on the host machine and enter `0.0.0.0:8080` in the address bar. If you want to run the server on port 80 (the normal http port, so you don't have to include the `8080` in the url) you'll have to change line 70 in server.py to `port='80'`. 
+
+[TIP] 
+You'll have to run the app as `sudo` on a Unix device. I don't know how it would interact on Windows.
+
+== Using the site
+We have seperate pit scouting forms for Mechanical/Electrical/Programming determined by their respective leads. We also have a Business/Administration/Management section with our fundraising and media forms, as well as a portal to view the data which is still experimental.  

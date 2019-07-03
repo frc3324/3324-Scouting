@@ -18,7 +18,7 @@ with open('./static/constants.json') as f:
     constants = json.load(f)
 
 for item in constants["tables"]:
-    database.create_table(item.encode('utf8'))
+    database.create_table(item.encode('utf-8'))
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -67,4 +67,4 @@ def teamInformation():
 def autofill():
     return send_file('autofill.js')
 
-if __name__ == '__main__': app.run(host='0.0.0.0',port='80')
+if __name__ == '__main__': app.run(host='0.0.0.0',port='8080')
