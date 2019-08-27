@@ -1,19 +1,16 @@
-import unicodecsv as csv
+import csv
 import sqlite3
 import re
 import json
 
-with open('./static/constants.json') as c:
-    print(c)
-    constants = json.load(c)
+constants = json.load(open('./static/constants.json'))
 
 
 def create_table(table):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    executeString = '''CREATE TABLE ''' + str(table) + " " + str(tuple(constants["questionIndexes"][table])).replace("u'", "'")
     try:
-        cursor.execute('''CREATE TABLE ''' + str(table) + " " + str(tuple(constants["questionIndexes"][table])).replace("u'", "'"))
+        cursor.execute('''CREATE TABLE ''' + str(table) + " " + str(tuple(constants["questionIndexes"][table])))
     except Exception as e: print(e)
 
 def submit_form(data, table):
@@ -43,7 +40,7 @@ def create_csv(table):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     data = cursor.execute("SELECT * FROM " + table)
-    with open(table + '.csv', 'w') as f:
-        writer = csv.writer(f, encoding="utf-8")
+    with open(table + '.csv', 'w', encoding="UTF-8", newline='') as f:
+        writer = csv.writer(f)
         writer.writerow(constants["questions"][table])
         writer.writerows(data)

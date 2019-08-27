@@ -14,11 +14,10 @@ import json
 system("python3 getJson.py " + "2019tes")
 app = Flask(__name__)
 
-with open('./static/constants.json') as f:
-    constants = json.load(f)
+constants = json.load(open('./static/constants.json')
 
 for item in constants["tables"]:
-    database.create_table(item.encode('utf-8'))
+    database.create_table(item)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
