@@ -14,7 +14,7 @@ import json
 system("python3 getJson.py " + "2019tes")
 app = Flask(__name__)
 
-constants = json.load(open('./static/constants.json')
+constants = json.load(open('./static/constants.json'))
 
 for item in constants["tables"]:
     database.create_table(item)
