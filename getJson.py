@@ -15,7 +15,7 @@ if __name__ == "__main__":
         if sys.argv[1] != "":
             event_key = sys.argv[1]
     except:
-        event_key = "2019ohmv"
+        event_key = "2020ohmv"
 
     extraPath = "/"
 
