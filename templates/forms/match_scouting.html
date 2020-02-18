@@ -76,6 +76,44 @@
           </div>
         </div>
         <hr>
+        <h2>Teleop</h2>
+        <h4>Shooting</h4>
+        <div class="scoringQuestions">
+          <div>
+            <h4>Low Miss</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+	        <div>
+            <h4>Low Hit</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+          <div>
+            <h4>High Miss</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="cargo_mid" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+	        <div>
+            <h4>High Outer</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="cargo_mid" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+          <div>
+            <h4>High Inner</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="cargo_high" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+        </div>
 
         <div>
           <label for="ending_level">Did this team attempt a climb?</label>
