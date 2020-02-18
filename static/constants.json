@@ -2,7 +2,7 @@
   "tables": ["match", "mechanical", "electrical", "programming", "fundraising", "media"],
   "questions": {
     "match": ["Team Number", "Match Number", "Moved from Initiation Line",
-	      "Auto Low Miss", "Auto Low Htt", "Auto High Miss", "Auto High Outer", "Auto High Inner",
+	      "Auto Low Miss", "Auto Low Hit", "Auto High Miss", "Auto High Outer", "Auto High Inner",
 	      "Tele Low Miss", "Tele Low Hit", "Tele High Miss", "Tele High Inner", "Tele High Inner",
 	      "Attempted Climb", "Ending Level", "Level Climb", "Notes"],
    "mechanical": ["Team Number", "Drivetrain Information", "Climber Information",

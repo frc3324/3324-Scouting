@@ -25,10 +25,6 @@
           <label for="match_number">Match Number</label>
           <input type="number" name="match_number" required value="1" min="1">
         </div>
-        <div>
-          <label for="starting_level">What level did this team start at</label>
-          <input type="number" name="starting_level" id="starting_level" value="1" min="1" max="2">
-        </div>
 
         <hr>
   <h2>Auto</h2>
@@ -43,35 +39,35 @@
           <div>
             <h4>Low Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="auto_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
 	        <div>
             <h4>Low Hit</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="auto_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
           <div>
             <h4>High Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="cargo_mid" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="auto_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
 	        <div>
             <h4>High Outer</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="cargo_mid" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="auto_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
           <div>
             <h4>High Inner</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="cargo_high" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="auto_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         </div>
@@ -82,35 +78,35 @@
           <div>
             <h4>Low Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="tele_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
-
-	        <div>
+        
+            <div>
             <h4>Low Hit</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="tele_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
-
+        
           <div>
             <h4>High Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="cargo_mid" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="tele_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
-
-	        <div>
+        
+            <div>
             <h4>High Outer</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="cargo_mid" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="tele_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
-
+        
           <div>
             <h4>High Inner</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="cargo_high" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input name="tele_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         </div>
@@ -123,9 +119,9 @@
 
         <div>
           <label for="ending_level">What level did this team end at/climb to?</label><br>
-	  <span class="radioButtons"> <p>Rendezvous <input type="radio" required name="climb_type" value="0"> </p>
-	  <p>Side <input type="radio" required name="climb_type" value="1"> </p>
-	  <p>Center <input type="radio" required name="climb_type" value="2"> </p></span>
+	  <span class="radioButtons"> <p>Park in Rendezvous <input type="radio" required name="ending_level" value="0"> </p>
+	  <p>Side <input type="radio" required name="ending_level" value="1"> </p>
+	  <p>Center <input type="radio" required name="ending_level" value="2"> </p></span>
         </div>
 
 	<div>
