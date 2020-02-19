@@ -112,6 +112,18 @@
         </div>
 
         <div>
+          <label for="cp_spin">Did they spin the Control Panel 3-5 times?</label>
+          <span class="radioButtons"> <p>Yes <input type="radio" required name="cp_spin" value="1"> </p>
+          <p>No <input type="radio" required name="cp_spin" value="0"> </p></span>
+        </div>
+
+        <div>
+          <label for="cp_align">Did they align the control panel with the correct color?</label>
+          <span class="radioButtons"> <p>Yes <input type="radio" required name="cp_align" value="1"> </p>
+          <p>No <input type="radio" required name="cp_align" value="0"> </p></span>
+        </div>
+        
+        <div>
           <label for="attempted_climb">Did this team attempt a climb?</label>
           <span class="radioButtons"> <p>Yes <input type="radio" required name="attempted_climb" value="1"> </p>
           <p>No <input type="radio" required name="attempted_climb" value="0"> </p></span>
@@ -119,16 +131,18 @@
 
         <div>
           <label for="ending_level">What level did this team end at/climb to?</label><br>
-	  <span class="radioButtons"> <p>Park in Rendezvous <input type="radio" required name="ending_level" value="0"> </p>
-	  <p>Side <input type="radio" required name="ending_level" value="1"> </p>
-	  <p>Center <input type="radio" required name="ending_level" value="2"> </p></span>
+	        <span class="radioButtons"> <p>Park in Rendezvous <input type="radio" required name="ending_level" value="0"> </p>
+	        <p>Side <input type="radio" required name="ending_level" value="1"> </p>
+	        <p>Center <input type="radio" required name="ending_level" value="2"> </p></span>
         </div>
 
-	<div>
+	      <div>
           <label for="ending_level">Was the bar level?</label>
           <span class="radioButtons"> <p>Yes <input type="radio" required name="level_climb" value="1"> </p>
           <p>No <input type="radio" required name="level_climb" value="0"> </p></span>
         </div>
+
+        
 
         <div>
           <label for="notes">Other Notes (Buddy climb, etc)</label>
