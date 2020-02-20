@@ -19,19 +19,19 @@
       <form method="POST" action="submit?form=match">
         <div>
           <label for="team_number">Team Number</label>
-          <input type="number" name="team_number" id="teamNumberInput" placeholder="3324" required min="0" max="10000">
+          <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="number" name="team_number" id="teamNumberinput onclick="htmlToVar()" onkeypress="htmlToVar()"" placeholder="3324" required min="0" max="10000">
         </div>
         <div>
           <label for="match_number">Match Number</label>
-          <input type="number" name="match_number" required value="1" min="1">
+          <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="number" name="match_number" required value="1" min="1">
         </div>
 
         <hr>
   <h2>Auto</h2>
   <div>
 	  <label for="moved_initiation">Did they move from the initiation line?</label>
-	  <span class="radioButtons"> <p>Yes <input type="radio" required name="moved_initiation" value="1"> </p>
-	  <p>No <input type="radio" required name="moved_initiation" value="0"> </p></span>
+	  <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="moved_initiation" value="1"> </p>
+	  <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="moved_initiation" value="0"> </p></span>
     </div>
 
         <h4>Shooting</h4>
@@ -39,35 +39,35 @@
           <div>
             <h4>Low Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="auto_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
 	        <div>
             <h4>Low Hit</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="auto_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
           <div>
             <h4>High Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="auto_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
 	        <div>
             <h4>High Outer</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="auto_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
           <div>
             <h4>High Inner</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="auto_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         </div>
@@ -78,85 +78,85 @@
           <div>
             <h4>Low Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="tele_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         
           <div>
             <h4>Low Hit</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="tele_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         
           <div>
             <h4>High Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="tele_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         
           <div>
             <h4>High Outer</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="tele_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         
           <div>
             <h4>High Inner</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="tele_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         </div>
 
         <div>
           <label for="cp_spin">Did they spin the Control Panel 3-5 times?</label>
-          <span class="radioButtons"> <p>Yes <input type="radio" required name="cp_spin" value="1"> </p>
-          <p>No <input type="radio" required name="cp_spin" value="0"> </p></span>
+          <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="cp_spin" value="1"> </p>
+          <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="cp_spin" value="0"> </p></span>
         </div>
 
         <div>
           <label for="cp_align">Did they align the control panel with the correct color?</label>
-          <span class="radioButtons"> <p>Yes <input type="radio" required name="cp_align" value="1"> </p>
-          <p>No <input type="radio" required name="cp_align" value="0"> </p></span>
+          <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="cp_align" value="1"> </p>
+          <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="cp_align" value="0"> </p></span>
         </div>
         
         <div>
           <label for="attempted_climb">Did this team attempt a climb?</label>
-          <span class="radioButtons"> <p>Yes <input type="radio" required name="attempted_climb" value="1"> </p>
-          <p>No <input type="radio" required name="attempted_climb" value="0"> </p></span>
+          <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="attempted_climb" value="1"> </p>
+          <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="attempted_climb" value="0"> </p></span>
         </div>
 
         <div>
           <label for="ending_level">What level did this team end at/climb to?</label><br>
-	        <span class="radioButtons"> <p>Park in Rendezvous <input type="radio" required name="ending_level" value="0"> </p>
-	        <p>Side <input type="radio" required name="ending_level" value="1"> </p>
-	        <p>Center <input type="radio" required name="ending_level" value="2"> </p></span>
+	        <span class="radioButtons"> <p>Park in Rendezvous <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="ending_level" value="0"> </p>
+	        <p>Side <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="ending_level" value="1"> </p>
+	        <p>Center <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="ending_level" value="2"> </p></span>
         </div>
 
 	      <div>
           <label for="ending_level">Was the bar level?</label>
-          <span class="radioButtons"> <p>Yes <input type="radio" required name="level_climb" value="1"> </p>
-          <p>No <input type="radio" required name="level_climb" value="0"> </p></span>
+          <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="level_climb" value="1"> </p>
+          <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="level_climb" value="0"> </p></span>
         </div>
 
         
 
         <div>
           <label for="notes">Other Notes (Buddy climb, Defended, was Defended against, etc)</label>
-          <input type="text" name="notes" id="notes">
+          <input onclick="htmlToVar()" onkeypress="htmlToVar()" onclick="htmlToVar()" onkeypress="htmlToVar()" type="text" name="notes" id="notes">
         </div>
 
         <div>
           <button>Submit</button>
         </div>
 	
-	<div>
-	  <var>websitecontent
-	    <input type="text" onkeypress="bakeCookies()">
-	  <input type="text" onclick="bakeCookies()">
+	      <div>
+	       <var>websitecontent
+	       <input type="text" onkeypress="bakeCookies()">
+         <input type="text" onclick="bakeCookies()">
         </div>
 	
       </form>

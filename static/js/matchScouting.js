@@ -1,4 +1,5 @@
-boolean cookieCheck;
+var cookieCheck = false;
+let jsonarray = [];
 
 function increase(ele) {
   var input = ele.parentNode.children[2];
@@ -24,11 +25,13 @@ function decrease(ele) {
 
 // make a cookie if this is the first input this page, then set currentCookie to true and update data
 function bakeCookies() {
-    if (cookieCheck == false)
-	document.cookie = "currentCookie";
-    cookieCheck = true;
-    else {
-	currentCookie = ;
+    var conString = "currentCookie="
+    for (i = 0; i <= jsonarray; i++) {
+      if (!jsonarray.length = i){
+        conString = conString + jsonarray[i] + ",";
+      } else {
+        conString = conString + jsonarray[i];
+      }
     }
 	}
 
@@ -38,9 +41,12 @@ function newPage() {
 }
 
 // sets variables values equal to html values in JSON
-function htmlToVar(var var1) {
+function htmlToVar(input, index) {
 
-    var var2 = variablesName(var1) + ": " + var1;
+    var jformat = variablesName(input) + ": " + input;
 
-    return var2;
+    if (jsonarray.length <= index)
+      jsonarray.length = index;
+
+    jsonarray[index] = jformat;
 }
