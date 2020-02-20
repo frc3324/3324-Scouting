@@ -25,85 +25,140 @@
           <label for="match_number">Match Number</label>
           <input type="number" name="match_number" required value="1" min="1">
         </div>
-        <div>
-          <label for="starting_level">What level did this team start at</label>
-          <input type="number" name="starting_level" id="starting_level" value="1" min="1" max="2">
-        </div>
 
         <hr>
-        <h4>Cargo Scored</h4>
+  <h2>Auto</h2>
+  <div>
+	  <label for="moved_initiation">Did they move from the initiation line?</label>
+	  <span class="radioButtons"> <p>Yes <input type="radio" required name="moved_initiation" value="1"> </p>
+	  <p>No <input type="radio" required name="moved_initiation" value="0"> </p></span>
+    </div>
+
+        <h4>Shooting</h4>
         <div class="scoringQuestions">
           <div>
-            <h4>Low</h4>
+            <h4>Low Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="cargo_low" class="scoringNumber" value="0" min="0" max="12" readonly="readonly" type="number">
+            <input name="auto_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+	        <div>
+            <h4>Low Hit</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="auto_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
           <div>
-            <h4>Mid</h4>
+            <h4>High Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="cargo_mid" class="scoringNumber" value="0" min="0" max="4" readonly="readonly" type="number">
+            <input name="auto_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+
+	        <div>
+            <h4>High Outer</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="auto_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
           <div>
-            <h4>High</h4>
+            <h4>High Inner</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="cargo_high" class="scoringNumber" value="0" min="0" max="4" readonly="readonly" type="number">
+            <input name="auto_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         </div>
         <hr>
-
-
-        <h4>Hatches Scored</h4>
+        <h2>Teleop</h2>
+        <h4>Shooting</h4>
         <div class="scoringQuestions">
           <div>
-            <h4>Low</h4>
+            <h4>Low Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="hatch_low" class="scoringNumber" value="0" min="0" max="12" readonly="readonly" type="number">
+            <input name="tele_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
-
+        
           <div>
-            <h4>Mid</h4>
+            <h4>Low Hit</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="hatch_mid" class="scoringNumber" value="0" min="0" max="4" readonly="readonly" type="number">
+            <input name="tele_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
-
+        
           <div>
-            <h4>High</h4>
+            <h4>High Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input name="hatch_high" class="scoringNumber" value="0" min="0" max="4" readonly="readonly" type="number">
+            <input name="tele_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+        
+          <div>
+            <h4>High Outer</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="tele_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
+          </div>
+        
+          <div>
+            <h4>High Inner</h4>
+            <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
+            <input name="tele_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         </div>
-        <hr>
 
         <div>
-          <label for="other_side">Did they go on the other side?</label>
-          <span class="radioButtons"> <p>Yes <input type="radio" required name="other_side" value="1"> </p>
-          <p>No <input type="radio" required name="other_side" value="0"> </p></span>
+          <label for="cp_spin">Did they spin the Control Panel 3-5 times?</label>
+          <span class="radioButtons"> <p>Yes <input type="radio" required name="cp_spin" value="1"> </p>
+          <p>No <input type="radio" required name="cp_spin" value="0"> </p></span>
         </div>
+
         <div>
-          <label for="ending_level">Did this team attempt a climb?</label>
+          <label for="cp_align">Did they align the control panel with the correct color?</label>
+          <span class="radioButtons"> <p>Yes <input type="radio" required name="cp_align" value="1"> </p>
+          <p>No <input type="radio" required name="cp_align" value="0"> </p></span>
+        </div>
+        
+        <div>
+          <label for="attempted_climb">Did this team attempt a climb?</label>
           <span class="radioButtons"> <p>Yes <input type="radio" required name="attempted_climb" value="1"> </p>
           <p>No <input type="radio" required name="attempted_climb" value="0"> </p></span>
         </div>
+
         <div>
-          <label for="ending_level">What level did this team end at/climb to?</label>
-          <input type="number" name="ending_level" id="ending_level" value="0" min="0" max="3">
+          <label for="ending_level">What level did this team end at/climb to?</label><br>
+	        <span class="radioButtons"> <p>Park in Rendezvous <input type="radio" required name="ending_level" value="0"> </p>
+	        <p>Side <input type="radio" required name="ending_level" value="1"> </p>
+	        <p>Center <input type="radio" required name="ending_level" value="2"> </p></span>
         </div>
+
+	      <div>
+          <label for="ending_level">Was the bar level?</label>
+          <span class="radioButtons"> <p>Yes <input type="radio" required name="level_climb" value="1"> </p>
+          <p>No <input type="radio" required name="level_climb" value="0"> </p></span>
+        </div>
+
+        
+
         <div>
-          <label for="notes">Other Notes (Buddy climb, etc)</label>
+          <label for="notes">Other Notes (Buddy climb, Defended, was Defended against, etc)</label>
           <input type="text" name="notes" id="notes">
         </div>
 
         <div>
           <button>Submit</button>
         </div>
+	
+	<div>
+	  <var>websitecontent
+	    <input type="text" onkeypress="bakeCookies()">
+	  <input type="text" onclick="bakeCookies()">
+        </div>
+	
       </form>
     </body>
 </html>
