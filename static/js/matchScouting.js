@@ -1,52 +1,54 @@
-var cookieCheck = false;
-let jsonarray = [];
+let answerArray = new Array(19).fill("0");
+let scouterMatchNum = 0;
 
 function increase(ele) {
-  var input = ele.parentNode.children[2];
-  input.value = parseInt(input.value) + 1;
-  if (parseInt(input.value) == parseInt(input.max)) {
-    ele.parentNode.children[1].disabled = true;
-  }
-  if (ele.parentNode.children[3].disabled) {
-    ele.parentNode.children[3].disabled = false;
-  }
+    let input = ele.parentNode.children[2];
+    input.value = parseInt(input.value) + 1;
+    if (parseInt(input.value) == parseInt(input.max)) {
+        ele.parentNode.children[1].disabled = true;
+    }
+    if (ele.parentNode.children[3].disabled) {
+        ele.parentNode.children[3].disabled = false;
+    }
+    updateArray(input);
 }
 
 function decrease(ele) {
-  var input = ele.parentNode.children[2];
-  input.value = parseInt(input.value) - 1;
-  if (parseInt(input.value) == parseInt(input.min)) {
-    ele.parentNode.children[3].disabled = true;
-  }
-  if (ele.parentNode.children[1].disabled) {
-    ele.parentNode.children[1].disabled = false;
-  }
-}
-
-// make a cookie if this is the first input this page, then set currentCookie to true and update data
-function bakeCookies() {
-    var conString = "currentCookie="
-    for (i = 0; i <= jsonarray; i++) {
-      if (!jsonarray.length = i){
-        conString = conString + jsonarray[i] + ",";
-      } else {
-        conString = conString + jsonarray[i];
-      }
+    let input = ele.parentNode.children[2];
+    input.value = parseInt(input.value) - 1;
+    if (parseInt(input.value) == parseInt(input.min)) {
+        ele.parentNode.children[3].disabled = true;
     }
-	}
-
-// set currentCookie to false so that a new one will be created, and reset page to default values
-function newPage() {
-    
+    if (ele.parentNode.children[1].disabled) {
+        ele.parentNode.children[1].disabled = false;
+    }
+    updateArray(input);
 }
 
-// sets variables values equal to html values in JSON
-function htmlToVar(input, index) {
+function updateArray(ele) {
+    answerArray[constants.questionIndexes.match.indexOf(ele.name)] = ele.value
+    localStorage.setItem("match"+String(scouterMatchNum), JSON.stringify(answerArray));
+}
 
-    var jformat = variablesName(input) + ": " + input;
+function postData() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', "/submit?form=match", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) { //HTTP Success
+            localStorage.clear();
+            alert("Success! The data was transferred properly.");
+        } 
+    }
+    xhr.onerror = function() { //HTTP error
+        alert("Something went wrong.");
+    }
+    xhr.send(JSON.stringify(localStorage));
+}
 
-    if (jsonarray.length <= index)
-      jsonarray.length = index;
-
-    jsonarray[index] = jformat;
+function resetForm() {
+    if (confirm("Are you sure? This will finalize the data you have written.")) {
+        document.getElementsByTagName("form")[0].reset()
+        scouterMatchNum++;
+    }
 }

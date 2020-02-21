@@ -25,7 +25,7 @@ def index():
 
 @app.route('/raw_data', methods=['GET', 'POST'])
 def raw_data():
-    data = database.getData()
+    data = database.get_data()
     return render_template('data_viewer/raw_data.html', allData=json.dumps(data), constants=json.dumps(constants))
 
 @app.route('/exports', methods=['GET', 'POST'])
@@ -39,14 +39,11 @@ def calculated_team_averages():
 
 @app.route('/form', methods=['GET', 'POST'])
 def return_form():
-    return render_template('forms/' + request.args.get('type') + '_scouting.html')
+    return render_template('forms/' + request.args.get('type') + '_scouting.html', constants=json.dumps(constants))
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit_form():
-    answerList = []
-    for x in range(len(constants["questions"][request.args.get('form')])):
-        answerList.append(request.form[constants["questionIndexes"][request.args.get('form')][x]])
-    database.submit_form(answerList, request.args.get('form'))
+    database.submit_form(request.get_json(), request.args.get('form'))
     return render_template('submitted.html')
 
 @app.route('/csv_export', methods=['GET', 'POST'])

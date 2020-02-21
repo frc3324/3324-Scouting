@@ -21,7 +21,6 @@ function autocomplete(inp, arr) {
   arr = arr.teams
   var currentFocus;
   inp.addEventListener("input", function(e) {
-      debugger;
       document.getElementById("teamNumberInput").style.marginBottom = "0px";
 
       var a, b, i, val = this.value;
