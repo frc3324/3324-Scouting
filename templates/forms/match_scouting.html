@@ -6,7 +6,7 @@
       <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}"> <link rel="stylesheet" href="{{ url_for('static',filename = 'css/form.css')}}"> <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
 
       <script>
-        window.constants = { constants | safe }
+        window.constants = {{ constants | safe }}
       </script>
 
       <script type="text/javascript" src="{{ url_for('static', filename = 'js/autofill.js') }}"></script>
