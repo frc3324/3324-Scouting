@@ -1,5 +1,25 @@
 let answerArray = new Array(19).fill("0");
 let scouterMatchNum = 0;
+var currentDiv = 0;
+var divNames = ["teamatch", "auto", "teleop"];
+    
+function next() {
+  for (var i = 0; i <= 2; i++){
+    document.getElementById(divNames[i]).style.display = "none";
+  }
+  currentDiv += 1;
+  if (currentDiv > 2){currentDiv = 2}
+  document.getElementById(divNames[currentDiv]).style.display = "block";
+}
+
+function prev() {
+  for (var i = 0; i <= 2; i++){
+    document.getElementById(divNames[i]).style.display = "none";
+  }
+  currentDiv -= 1;
+  if (currentDiv < 0){currentDiv = 0}
+  document.getElementById(divNames[currentDiv]).style.display = "block";
+}
 
 function increase(ele) {
     let input = ele.parentNode.children[2];
@@ -24,6 +44,8 @@ function decrease(ele) {
     }
     updateArray(input);
 }
+
+
 
 function updateArray(ele) {
     answerArray[constants.questionIndexes.match.indexOf(ele.name)] = ele.value

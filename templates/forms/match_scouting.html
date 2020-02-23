@@ -6,7 +6,7 @@
       <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}"> <link rel="stylesheet" href="{{ url_for('static',filename = 'css/form.css')}}"> <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
 
       <script>
-        window.constants = {{ constants | safe }}
+        window.constants = { constants | safe }
       </script>
 
       <script type="text/javascript" src="{{ url_for('static', filename = 'js/autofill.js') }}"></script>
@@ -16,8 +16,13 @@
       <div id="topBar">
         <a href="/"><button id="backButton">< Back to Home</button></a>
         <h2>Match Scouting</h2> </div>
-
+      <div id="buttonAlign">
+      <button id="nextButton" style="width: 50%; background-color: #b10003; color: white" onclick="next()">Next</button>
+      <button id="prevButton" style="width: 50%; background-color: #b10003; color: white" onclick="prev()">Previous</button>
+      </div>
+      
       <form method="POST" action="submit?form=match">
+      <div id="teamatch">
         <div>
           <label for="team_number">Team Number</label>
           <input oninput="updateArray(this)" type="number" name="team_number" id="teamNumberInput" placeholder="3324" required min="0" max="10000">
@@ -26,8 +31,9 @@
           <label for="match_number">Match Number</label>
           <input oninput="updateArray(this)" type="number" name="match_number" required value="1" min="1">
         </div>
-
-        <hr>
+      </div>
+      
+  <div id="auto" style="display: none;">
   <h2>Auto</h2>
   <div>
 	  <label for="moved_initiation">Did they move from the initiation line?</label>
@@ -44,7 +50,7 @@
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
-	   <div>
+	        <div>
             <h4>Low Hit</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
             <input oninput="updateArray(this)" name="auto_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
@@ -72,7 +78,9 @@
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         </div>
-        <hr>
+      </div>
+
+      <div id="teleop" style="display: none;">
         <h2>Teleop</h2>
         <h4>Shooting</h4>
         <div class="scoringQuestions">
@@ -137,19 +145,20 @@
 	        <p>Center <input oninput="updateArray(this)" type="radio" required name="ending_level" value="2"> </p></span>
         </div>
 
-	<div>
+	      <div>
           <label for="ending_level">Was the bar level?</label>
           <span class="radioButtons"> <p>Yes <input oninput="updateArray(this)" type="radio" required name="level_climb" value="1"> </p>
           <p>No <input oninput="updateArray(this)" type="radio" required name="level_climb" value="0"> </p></span>
         </div>
-
         <div>
           <label for="notes">Other Notes (Buddy climb, Defended, was Defended against, etc)</label>
           <input oninput="updateArray(this)" type="text" name="notes" id="notes">
         </div>
-
+      </div>
       </form>
-        <button onclick="resetForm()">Next Match</button>
-	    <button onclick="postData()">Send Data to Server</button>
+      <div id="buttonAlign">
+      <button style="width: 50%; background-color: #b10003; color: white" id="prevButton" onclick="resetForm()">Next Match</button>
+	    <button style="width: 50%; background-color: #b10003; color: white" id="nextButton" onclick="postData()">Send Data to Server</button>
+      </div>
     </body>
 </html>
