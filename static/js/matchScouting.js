@@ -72,5 +72,7 @@ function resetForm() {
     if (confirm("Are you sure? This will finalize the data you have written.")) {
         document.getElementsByTagName("form")[0].reset()
         scouterMatchNum++;
+        currentDiv = 0;
+        document.getElementById(divNames[currentDiv]).style.display = "block";
     }
 }
