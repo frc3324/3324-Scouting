@@ -43,6 +43,7 @@ function autocomplete(inp, arr) {
           b.innerHTML += "<input type='hidden' value='" + String(arr[i].teamNumber) + "'>";
               b.addEventListener("click", function(e) {
               inp.value = this.getElementsByTagName("input")[0].value;
+              updateArray(inp);
               closeAllLists();
           });
           a.appendChild(b);

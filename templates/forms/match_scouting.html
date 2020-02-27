@@ -15,20 +15,22 @@
     <body>
       <div id="topBar">
         <a href="/"><button id="backButton">< Back to Home</button></a>
-        <h2>Match Scouting</h2> </div>
+        <h2>Match Scouting</h2>
+        <button id="postButton" onclick="postData()">Send Data to Server</button>
+      </div>
       <div id="buttonAlign">
-      <button id="nextButton" style="width: 50%; background-color: #b10003; color: white" onclick="next()">Next</button>
-      <button id="prevButton" style="width: 50%; background-color: #b10003; color: white" onclick="prev()">Previous</button>
+      <button class="navButton" onclick="prev()">Previous</button>
+      <button class="navButton" onclick="next()">Next</button>
       </div>
       
-      <form method="POST" action="submit?form=match">
+      <form method="POST" onsubmit="resetForm(event); return false;">
       <div id="teamatch">
         <div>
           <label for="team_number">Team Number</label>
           <input oninput="updateArray(this)" type="number" name="team_number" id="teamNumberInput" placeholder="3324" required min="0" max="10000">
         </div>
         <div>
-          <label for="match_number">Match Number</label>
+          <label for="match_number">Qual Number</label>
           <input oninput="updateArray(this)" type="number" name="match_number" required value="1" min="1">
         </div>
       </div>
@@ -140,25 +142,30 @@
 
         <div>
           <label for="ending_level">What level did this team end at/climb to?</label><br>
-	        <span class="radioButtons"> <p>Park in Rendezvous <input oninput="updateArray(this)" type="radio" required name="ending_level" value="0"> </p>
-	        <p>Side <input oninput="updateArray(this)" type="radio" required name="ending_level" value="1"> </p>
-	        <p>Center <input oninput="updateArray(this)" type="radio" required name="ending_level" value="2"> </p></span>
+          <span class="radioButtons"> <p>Did not climb <input oninput="updateArray(this)" type="radio" required name="ending_level" value="0"></p>
+            <p>Park in Rendezvous <input oninput="updateArray(this)" type="radio" required name="ending_level" value="1"> </p>
+	        <p>Side <input oninput="updateArray(this)" type="radio" required name="ending_level" value="2"> </p>
+	        <p>Center <input oninput="updateArray(this)" type="radio" required name="ending_level" value="3"> </p></span>
         </div>
 
-	      <div>
+	    <div>
           <label for="ending_level">Was the bar level?</label>
           <span class="radioButtons"> <p>Yes <input oninput="updateArray(this)" type="radio" required name="level_climb" value="1"> </p>
           <p>No <input oninput="updateArray(this)" type="radio" required name="level_climb" value="0"> </p></span>
         </div>
+
+        <div>
+          <label for="defence_level">Rate Defense from 1-5 (Put 0 if they didn't defend)</label>
+          <input min='0' max='5' oninput="updateArray(this)" type="number" required name="defense_rating" value="0">
+        </div>
+
         <div>
           <label for="notes">Other Notes (Buddy climb, Defended, was Defended against, etc)</label>
           <input oninput="updateArray(this)" type="text" name="notes" id="notes">
         </div>
+        <br>
+        <input type="submit" class="navButton" value="Next Match">
       </div>
       </form>
-      <div id="buttonAlign">
-      <button style="width: 50%; background-color: #b10003; color: white" id="prevButton" onclick="resetForm()">Next Match</button>
-	    <button style="width: 50%; background-color: #b10003; color: white" id="nextButton" onclick="postData()">Send Data to Server</button>
-      </div>
     </body>
 </html>

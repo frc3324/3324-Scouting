@@ -1,4 +1,5 @@
-let answerArray = new Array(19).fill("0");
+let answerArray = new Array(constants.questionIndexes.match.length).fill("0");
+answerArray[1] = "1";
 let scouterMatchNum = 0;
 var currentDiv = 0;
 var divNames = ["teamatch", "auto", "teleop"];
@@ -68,12 +69,19 @@ function postData() {
     xhr.send(JSON.stringify(localStorage));
 }
 
-function resetForm() {
+function resetForm(event) {
     if (confirm("Are you sure? This will finalize the data you have written.")) {
         document.getElementsByTagName("form")[0].reset()
         scouterMatchNum++;
         document.getElementById(divNames[currentDiv]).style.display = "none";
         currentDiv = 0;
         document.getElementById(divNames[currentDiv]).style.display = "block";
+
+        for (var i=0; i<document.getElementsByClassName('downButton').length;i++) {
+            document.getElementsByClassName('downButton')[i].disabled = true;
+        }
+        answerArray = [];
+    } else {
+        event.preventDefault();
     }
 }
