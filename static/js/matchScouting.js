@@ -60,6 +60,7 @@ function postData() {
                     return false;
             }
     }
+    document.getElementById("postButton").innerHTML = "Send Data to Server";
     var xhr = new XMLHttpRequest();
     xhr.open('POST', "/submit?form=match", true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -78,6 +79,7 @@ function postData() {
 function resetForm(event) {
     if (confirm("Are you sure? This will finalize the data you have written.")) {
         localStorage.setItem("match"+String(scouterMatchNum), JSON.stringify(answerArray));
+        document.getElementById("postButton").innerHTML = "Send Data to Server (" + localStorage.length + ")";
         document.getElementsByTagName("form")[0].reset()
         scouterMatchNum++;
         document.getElementById(divNames[currentDiv]).style.display = "none";
