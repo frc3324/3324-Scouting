@@ -261,4 +261,17 @@ input:not([readonly="readonly"]):focus {
   .scoringQuestions div + div {
     margin-left: 20%;
   }
+    #postButton {
+		height: 100%;
+		width: 22%;
+		font-size: 25px;
+        margin-right: 4%;
+	}
+    .navButton {
+        font-size: 24px;
+    }
+    .scoringQuestions:nth-child(1)::after {
+        content: "\n";
+        white-space: pre;
+    }
 }

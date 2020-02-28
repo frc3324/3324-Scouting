@@ -80,7 +80,8 @@ function resetForm(event) {
         for (var i=0; i<document.getElementsByClassName('downButton').length;i++) {
             document.getElementsByClassName('downButton')[i].disabled = true;
         }
-        answerArray = [];
+        answerArray = new Array(constants.questionIndexes.match.length).fill("0");
+        answerArray[1] = "1";
     } else {
         event.preventDefault();
     }
