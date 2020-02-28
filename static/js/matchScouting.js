@@ -3,6 +3,7 @@ answerArray[1] = "1";
 let scouterMatchNum = 0;
 var currentDiv = 0;
 var divNames = ["teamatch", "auto", "teleop"];
+var edited = false;
     
 function next() {
   for (var i = 0; i <= 2; i++){
@@ -50,10 +51,15 @@ function decrease(ele) {
 
 function updateArray(ele) {
     answerArray[constants.questionIndexes.match.indexOf(ele.name)] = ele.value
-    localStorage.setItem("match"+String(scouterMatchNum), JSON.stringify(answerArray));
+    edited = true;
 }
 
 function postData() {
+    if (edited) {
+            if (!confirm("Are you sure? The data you currently have in the form will not be submitted.")) {
+                    return false;
+            }
+    }
     var xhr = new XMLHttpRequest();
     xhr.open('POST', "/submit?form=match", true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -71,6 +77,7 @@ function postData() {
 
 function resetForm(event) {
     if (confirm("Are you sure? This will finalize the data you have written.")) {
+        localStorage.setItem("match"+String(scouterMatchNum), JSON.stringify(answerArray));
         document.getElementsByTagName("form")[0].reset()
         scouterMatchNum++;
         document.getElementById(divNames[currentDiv]).style.display = "none";
@@ -82,7 +89,14 @@ function resetForm(event) {
         }
         answerArray = new Array(constants.questionIndexes.match.length).fill("0");
         answerArray[1] = "1";
+        edited = false;
     } else {
         event.preventDefault();
     }
+}
+
+window.onbeforeunload = function(event) {
+        if (edited) {
+            event.preventDefault();
+        }
 }
