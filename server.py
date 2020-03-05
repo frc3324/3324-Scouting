@@ -63,4 +63,11 @@ def teamInformation():
 def autofill():
     return send_file('autofill.js')
 
-if __name__ == '__main__': app.run(host='0.0.0.0',port='8080')
+@app.route('/graph.pdf', methods=['GET', 'POST'])
+def graph():
+    database.create_csv("match")
+    system("Rscript /home/maniyar/3324-Scouting/makegraph.r")
+    database.create_csv
+    return send_file('Rplots.pdf')
+
+if __name__ == '__main__': app.run(host='0.0.0.0',port='80')
