@@ -1,5 +1,4 @@
 let answerArray = new Array(constants.questionIndexes.match.length).fill("0");
-answerArray[1] = "1";
 let scouterMatchNum = 0;
 var currentDiv = 0;
 var divNames = ["teamatch", "auto", "teleop"];
@@ -90,7 +89,6 @@ function resetForm(event) {
             document.getElementsByClassName('downButton')[i].disabled = true;
         }
         answerArray = new Array(constants.questionIndexes.match.length).fill("0");
-        answerArray[1] = "1";
         edited = false;
     } else {
         event.preventDefault();
