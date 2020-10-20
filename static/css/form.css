@@ -13,6 +13,25 @@ form {
     margin-bottom: 100px;
     position: relative;
 }
+#buttonAlign {
+    width: 420px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.navButton {
+    width: 40%;
+    background-color: #b10003;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 6px;
+    cursor: pointer;
+    font-family: openserif;
+    transition-duration: 0.15s;
+}
+.navButton:hover {
+    background-color: #6a1515;
+}
 div {
   margin-bottom: 20px;
 }
@@ -23,7 +42,7 @@ label {
   padding-right: 10px;
 }
 
-button, input[type="text"], input[type="number"] {
+button:not(.navButton), input[type="text"], input[type="number"] {
   float: right;
 }
 p {
@@ -140,6 +159,26 @@ button:disabled {
     cursor: default;
 }
 
+#postButton {
+    transition-duration: .15s;
+    position: absolute;
+    top: 0px;
+    right: 4%;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    height: 70px;
+    border: none;
+    width: 13%;
+    font-family: openserif;
+}
+
+#postButton:hover {
+    background-color: #0003;
+}
+
 input:not([readonly="readonly"]) {
   border: 0;
   border-bottom: 2px solid #b10003;
@@ -222,4 +261,17 @@ input:not([readonly="readonly"]):focus {
   .scoringQuestions div + div {
     margin-left: 20%;
   }
+    #postButton {
+		height: 100%;
+		width: 22%;
+		font-size: 25px;
+        margin-right: 4%;
+	}
+    .navButton {
+        font-size: 24px;
+    }
+    .scoringQuestions:nth-child(1)::after {
+        content: "\n";
+        white-space: pre;
+    }
 }

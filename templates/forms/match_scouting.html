@@ -3,9 +3,11 @@
     <head>
       <meta charset="utf-8">
       <title>Match Scouting Form</title>
-      <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}">
-      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/form.css')}}">
-      <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
+      <link rel="icon" href="{{ url_for('static',filename = 'favicon.png')}}"> <link rel="stylesheet" href="{{ url_for('static',filename = 'css/form.css')}}"> <link rel="stylesheet" href="{{ url_for('static',filename = 'css/default.css')}}">
+
+      <script>
+        window.constants = {{ constants | safe }}
+      </script>
 
       <script type="text/javascript" src="{{ url_for('static', filename = 'js/autofill.js') }}"></script>
       <script type="text/javascript" src="{{ url_for('static', filename = 'js/matchScouting.js') }}"></script>
@@ -14,24 +16,31 @@
       <div id="topBar">
         <a href="/"><button id="backButton">< Back to Home</button></a>
         <h2>Match Scouting</h2>
+        <button id="postButton" onclick="postData()">Send Data to Server</button>
       </div>
-
-      <form method="POST" action="submit?form=match">
+      <div id="buttonAlign">
+      <button class="navButton" onclick="prev()">Previous</button>
+      <button class="navButton" onclick="next()">Next</button>
+      </div>
+      
+      <form method="POST" onsubmit="resetForm(event); return false;">
+      <div id="teamatch">
         <div>
           <label for="team_number">Team Number</label>
-          <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="number" name="team_number" id="teamNumberinput" placeholder="3324" required min="0" max="10000">
+          <input oninput="updateArray(this)" type="number" name="team_number" id="teamNumberInput" placeholder="3324" required min="0" max="10000">
         </div>
         <div>
-          <label for="match_number">Match Number</label>
-          <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="number" name="match_number" required value="1" min="1">
+          <label for="match_number">Qual Number</label>
+          <input oninput="updateArray(this)" type="number" name="match_number" required min="1">
         </div>
-
-        <hr>
+      </div>
+      
+  <div id="auto" style="display: none;">
   <h2>Auto</h2>
   <div>
 	  <label for="moved_initiation">Did they move from the initiation line?</label>
-	  <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="moved_initiation" value="1"> </p>
-	  <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="moved_initiation" value="0"> </p></span>
+	  <span class="radioButtons"> <p>Yes <input oninput="updateArray(this)" type="radio" required name="moved_initiation" value="1"> </p>
+	  <p>No <input oninput="updateArray(this)" type="radio" required name="moved_initiation" value="0"> </p></span>
     </div>
 
         <h4>Shooting</h4>
@@ -39,126 +48,124 @@
           <div>
             <h4>Low Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="auto_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
 	        <div>
             <h4>Low Hit</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="auto_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
           <div>
             <h4>High Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="auto_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
 	        <div>
             <h4>High Outer</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="auto_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
 
           <div>
             <h4>High Inner</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="auto_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="auto_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         </div>
-        <hr>
+      </div>
+
+      <div id="teleop" style="display: none;">
         <h2>Teleop</h2>
         <h4>Shooting</h4>
         <div class="scoringQuestions">
           <div>
             <h4>Low Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="tele_low_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         
           <div>
             <h4>Low Hit</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="tele_low_hit" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         
           <div>
             <h4>High Miss</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="tele_high_miss" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         
           <div>
             <h4>High Outer</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="tele_high_outer" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         
           <div>
             <h4>High Inner</h4>
             <button type="button" class="icon upButton" onclick="increase(this)">&#xe316;</button>
-            <input onclick="htmlToVar()" onkeypress="htmlToVar()" name="tele_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
+            <input oninput="updateArray(this)" name="tele_high_inner" class="scoringNumber" value="0" min="0" readonly="readonly" type="number">
             <button type="button" disabled class="icon downButton" onclick="decrease(this)">&#xe313;</button>
           </div>
         </div>
 
         <div>
           <label for="cp_spin">Did they spin the Control Panel 3-5 times?</label>
-          <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="cp_spin" value="1"> </p>
-          <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="cp_spin" value="0"> </p></span>
+          <span class="radioButtons"> <p>Yes <input oninput="updateArray(this)" type="radio" required name="cp_spin" value="1"> </p>
+          <p>No <input oninput="updateArray(this)" type="radio" required name="cp_spin" value="0"> </p></span>
         </div>
 
         <div>
           <label for="cp_align">Did they align the control panel with the correct color?</label>
-          <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="cp_align" value="1"> </p>
-          <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="cp_align" value="0"> </p></span>
+          <span class="radioButtons"> <p>Yes <input oninput="updateArray(this)" type="radio" required name="cp_align" value="1"> </p>
+          <p>No <input oninput="updateArray(this)" type="radio" required name="cp_align" value="0"> </p></span>
         </div>
         
         <div>
           <label for="attempted_climb">Did this team attempt a climb?</label>
-          <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="attempted_climb" value="1"> </p>
-          <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="attempted_climb" value="0"> </p></span>
+          <span class="radioButtons"> <p>Yes <input oninput="updateArray(this)" type="radio" required name="attempted_climb" value="1"> </p>
+          <p>No <input oninput="updateArray(this)" type="radio" required name="attempted_climb" value="0"> </p></span>
         </div>
 
         <div>
           <label for="ending_level">What level did this team end at/climb to?</label><br>
-	        <span class="radioButtons"> <p>Park in Rendezvous <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="ending_level" value="0"> </p>
-	        <p>Side <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="ending_level" value="1"> </p>
-	        <p>Center <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="ending_level" value="2"> </p></span>
+          <span class="radioButtons"> <p>Did not climb <input oninput="updateArray(this)" type="radio" required name="ending_level" value="0"></p>
+            <p>Park in Rendezvous <input oninput="updateArray(this)" type="radio" required name="ending_level" value="1"> </p>
+	        <p>Side <input oninput="updateArray(this)" type="radio" required name="ending_level" value="2"> </p>
+	        <p>Center <input oninput="updateArray(this)" type="radio" required name="ending_level" value="3"> </p></span>
         </div>
 
-	      <div>
+	    <div>
           <label for="ending_level">Was the bar level?</label>
-          <span class="radioButtons"> <p>Yes <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="level_climb" value="1"> </p>
-          <p>No <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="radio" required name="level_climb" value="0"> </p></span>
+          <span class="radioButtons"> <p>Yes <input oninput="updateArray(this)" type="radio" required name="level_climb" value="1"> </p>
+          <p>No <input oninput="updateArray(this)" type="radio" required name="level_climb" value="0"> </p></span>
         </div>
 
-        
+        <div>
+          <label for="defence_level">Rate Defense from 1-5 (Put 0 if they didn't defend)</label>
+          <input min='0' max='5' oninput="updateArray(this)" type="number" required name="defense_rating" value="0">
+        </div>
 
         <div>
           <label for="notes">Other Notes (Buddy climb, Defended, was Defended against, etc)</label>
-          <input onclick="htmlToVar()" onkeypress="htmlToVar()" type="text" name="notes" id="notes">
+          <input oninput="updateArray(this)" type="text" name="notes" id="notes">
         </div>
-
-        <div>
-          <button>Submit</button>
-        </div>
-	
-	      <div>
-	       <var>websitecontent
-	       <input type="text" onkeypress="bakeCookies()">
-         <input type="text" onclick="bakeCookies()">
-        </div>
-	
+        <br>
+        <input type="submit" class="navButton" value="Next Match">
+      </div>
       </form>
     </body>
 </html>

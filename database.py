@@ -16,18 +16,19 @@ def create_table(table):
 def submit_form(data, table):
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
-    sqlString = "INSERT INTO " + table + " VALUES "
-    dataString = ""
-    for x in range (len(data)):
-        if (x == 0):
-            sqlString += "(?"
-        else:
-            sqlString += ",?"
-    sqlString += ")"
-    cursor.execute(sqlString, tuple(data))
+    for m in data:
+        dataString = ""
+        sqlString = "INSERT INTO " + table + " VALUES "
+        for x in range (len(json.loads(data[m]))):
+            if (x == 0):
+                sqlString += "(?"
+            else:
+                sqlString += ",?"
+        sqlString += ")"
+        cursor.execute(sqlString, tuple(json.loads(data[m])))
     conn.commit()
 
-def getData():
+def get_data():
     conn = sqlite3.connect('scouting.db')
     cursor = conn.cursor()
     data = {}

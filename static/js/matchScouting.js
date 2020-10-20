@@ -1,52 +1,102 @@
-var cookieCheck = false;
-let jsonarray = [];
+let answerArray = new Array(constants.questionIndexes.match.length).fill("0");
+let scouterMatchNum = 0;
+var currentDiv = 0;
+var divNames = ["teamatch", "auto", "teleop"];
+var edited = false;
+    
+function next() {
+  for (var i = 0; i <= 2; i++){
+    document.getElementById(divNames[i]).style.display = "none";
+  }
+  currentDiv += 1;
+  if (currentDiv > 2){currentDiv = 2}
+  document.getElementById(divNames[currentDiv]).style.display = "block";
+}
+
+function prev() {
+  for (var i = 0; i <= 2; i++){
+    document.getElementById(divNames[i]).style.display = "none";
+  }
+  currentDiv -= 1;
+  if (currentDiv < 0){currentDiv = 0}
+  document.getElementById(divNames[currentDiv]).style.display = "block";
+}
 
 function increase(ele) {
-  var input = ele.parentNode.children[2];
-  input.value = parseInt(input.value) + 1;
-  if (parseInt(input.value) == parseInt(input.max)) {
-    ele.parentNode.children[1].disabled = true;
-  }
-  if (ele.parentNode.children[3].disabled) {
-    ele.parentNode.children[3].disabled = false;
-  }
+    let input = ele.parentNode.children[2];
+    input.value = parseInt(input.value) + 1;
+    if (parseInt(input.value) == parseInt(input.max)) {
+        ele.parentNode.children[1].disabled = true;
+    }
+    if (ele.parentNode.children[3].disabled) {
+        ele.parentNode.children[3].disabled = false;
+    }
+    updateArray(input);
 }
 
 function decrease(ele) {
-  var input = ele.parentNode.children[2];
-  input.value = parseInt(input.value) - 1;
-  if (parseInt(input.value) == parseInt(input.min)) {
-    ele.parentNode.children[3].disabled = true;
-  }
-  if (ele.parentNode.children[1].disabled) {
-    ele.parentNode.children[1].disabled = false;
-  }
-}
-
-// make a cookie if this is the first input this page, then set currentCookie to true and update data
-function bakeCookies() {
-    var conString = "currentCookie="
-    for (i = 0; i <= jsonarray; i++) {
-      if (!jsonarray.length = i){
-        conString = conString + jsonarray[i] + ",";
-      } else {
-        conString = conString + jsonarray[i];
-      }
+    let input = ele.parentNode.children[2];
+    input.value = parseInt(input.value) - 1;
+    if (parseInt(input.value) == parseInt(input.min)) {
+        ele.parentNode.children[3].disabled = true;
     }
-	}
-
-// set currentCookie to false so that a new one will be created, and reset page to default values
-function newPage() {
-    
+    if (ele.parentNode.children[1].disabled) {
+        ele.parentNode.children[1].disabled = false;
+    }
+    updateArray(input);
 }
 
-// sets variables values equal to html values in JSON
-function htmlToVar(input, index) {
 
-    var jformat = variablesName(input) + ": " + input;
 
-    if (jsonarray.length <= index)
-      jsonarray.length = index;
+function updateArray(ele) {
+    answerArray[constants.questionIndexes.match.indexOf(ele.name)] = ele.value
+    edited = true;
+}
 
-    jsonarray[index] = jformat;
+function postData() {
+    if (edited) {
+            if (!confirm("Are you sure? The data you currently have in the form will not be submitted. Please click the 'Next Match' button to be able to submit this data if you need to.")) {
+                    return false;
+            }
+    }
+    document.getElementById("postButton").innerHTML = "Send Data to Server";
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', "/submit?form=match", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) { //HTTP Success
+            localStorage.clear();
+            alert("Success! The data was transferred properly.");
+        } 
+    }
+    xhr.onerror = function() { //HTTP error
+        alert("Something went wrong.");
+    }
+    xhr.send(JSON.stringify(localStorage));
+}
+
+function resetForm(event) {
+    if (confirm("Are you sure? This will finalize the data you have written.")) {
+        localStorage.setItem("match"+String(scouterMatchNum), JSON.stringify(answerArray));
+        document.getElementById("postButton").innerHTML = "Send Data to Server (" + localStorage.length + ")";
+        document.getElementsByTagName("form")[0].reset()
+        scouterMatchNum++;
+        document.getElementById(divNames[currentDiv]).style.display = "none";
+        currentDiv = 0;
+        document.getElementById(divNames[currentDiv]).style.display = "block";
+
+        for (var i=0; i<document.getElementsByClassName('downButton').length;i++) {
+            document.getElementsByClassName('downButton')[i].disabled = true;
+        }
+        answerArray = new Array(constants.questionIndexes.match.length).fill("0");
+        edited = false;
+    } else {
+        event.preventDefault();
+    }
+}
+
+window.onbeforeunload = function(event) {
+        if (edited) {
+            event.preventDefault();
+        }
 }

@@ -3,8 +3,8 @@
   "questions": {
     "match": ["Team Number", "Match Number", "Moved from Initiation Line",
 	      "Auto Low Miss", "Auto Low Hit", "Auto High Miss", "Auto High Outer", "Auto High Inner",
-	      "Tele Low Miss", "Tele Low Hit", "Tele High Miss", "Tele High Inner", "Tele High Inner",
-	      "Attempted Climb", "Ending Level", "Level Climb", "Notes", "CP Spin", "CP Align"],
+	      "Tele Low Miss", "Tele Low Hit", "Tele High Miss", "Tele High Outer", "Tele High Inner",
+	      "Control Spin", "Control Align", "Attempted Climb", "Ending Level", "Level Climb", "Defense Rating", "Notes"],
    "mechanical": ["Team Number", "Drivetrain Information", "Climber Information",
                   "Mechanisms Information", "Reliability", "Notes"],
     "electrical": ["Team Number", "Basic Team Structure", "Electrical Members",
@@ -17,8 +17,8 @@
   "questionIndexes": {
     "match": ["team_number", "match_number", "moved_initiation",
               "auto_low_miss", "auto_low_hit", "auto_high_miss", "auto_high_outer", "auto_high_inner",
-	      "tele_low_miss", "tele_low_hit", "tele_high_miss", "tele_high_outer", "tele_high_inner",
-              "attempted_climb", "ending_level", "level_climb", "notes", "cp_spin", "cp_align"],
+	          "tele_low_miss", "tele_low_hit", "tele_high_miss", "tele_high_outer", "tele_high_inner",
+              "cp_spin", "cp_align", "attempted_climb", "ending_level", "level_climb", "defense_rating", "notes"],
     "mechanical": ["team_number", "drivetrain_information", "climber_information",
                    "mechanisms_information", "reliability", "notes"],
     "electrical": ["team_number", "team_structure", "number_of_members",

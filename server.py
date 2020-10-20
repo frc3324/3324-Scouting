@@ -11,7 +11,7 @@ import json
 #        event_key = sys.argv[1]
 #except:
 #event_key = "2019paca"
-system("python3 getJson.py " + "2019tes")
+# system("python3 getJson.py " + "2019tes")
 app = Flask(__name__)
 
 constants = json.load(open('./static/constants.json'))
@@ -25,7 +25,7 @@ def index():
 
 @app.route('/raw_data', methods=['GET', 'POST'])
 def raw_data():
-    data = database.getData()
+    data = database.get_data()
     return render_template('data_viewer/raw_data.html', allData=json.dumps(data), constants=json.dumps(constants))
 
 @app.route('/exports', methods=['GET', 'POST'])
@@ -39,14 +39,11 @@ def calculated_team_averages():
 
 @app.route('/form', methods=['GET', 'POST'])
 def return_form():
-    return render_template('forms/' + request.args.get('type') + '_scouting.html')
+    return render_template('forms/' + request.args.get('type') + '_scouting.html', constants=json.dumps(constants))
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit_form():
-    answerList = []
-    for x in range(len(constants["questions"][request.args.get('form')])):
-        answerList.append(request.form[constants["questionIndexes"][request.args.get('form')][x]])
-    database.submit_form(answerList, request.args.get('form'))
+    database.submit_form(request.get_json(), request.args.get('form'))
     return render_template('submitted.html')
 
 @app.route('/csv_export', methods=['GET', 'POST'])
@@ -66,4 +63,11 @@ def teamInformation():
 def autofill():
     return send_file('autofill.js')
 
-if __name__ == '__main__': app.run(host='0.0.0.0',port='8080')
+@app.route('/graph.pdf', methods=['GET', 'POST'])
+def graph():
+    database.create_csv("match")
+    system("Rscript /home/maniyar/3324-Scouting/makegraph.r")
+    database.create_csv
+    return send_file('Rplots.pdf')
+
+if __name__ == '__main__': app.run(host='0.0.0.0',port='80')
